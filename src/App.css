@@ -17,6 +17,9 @@ h1 {
 p {
     font-family: daubenton;
 }
+.full_width{
+    width: 100%;
+}
 
 /*GRAPHIC ELEMENTS*/
 .line{
@@ -37,4 +40,11 @@ p {
 .grid-3-7{
     display: grid;
     grid-template-columns: 3fr 7fr;
+}
+
+/* media players */
+
+.theater{
+    width: 100vw;
+    height: 70vh;
 }
