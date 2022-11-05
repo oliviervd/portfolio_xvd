@@ -1,7 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import Db from "./components/db";
-import portfolioGrid from "./components/portfolioGrid";
 import PortfolioGrid from "./components/portfolioGrid";
 
 function App() {
@@ -23,7 +20,6 @@ function App() {
             <div className="line"></div>
         </div>
         <div className="margin-20p">
-            <p><Db/></p>
         </div>
 
         <div className="grid-3-7">
