@@ -27,23 +27,23 @@ const PortfolioGrid = (props) => {
 
     return(
         <div>
-            <div className="line"></div>
             {_portfolio.map((item => {
                 console.log(item.vimeo);
-
+                //todo: add if statements to show only if value
                 return(
-                    <div className="grid-3-7">
                         <div>
-                            <h1>{item.title}</h1>
-                            <p>directed by: {item.directed_by}</p>
-                            <p>produced by: {item.produced_by}</p>
-                            <p>cinematography: {item.cinematographer}</p>
-                            <p>art direction: {item.art_direction}</p>
-                            <VideoViewer vimeo_id={item.vimeo}/>
+                            <div>
+                                <h1>{item.title}</h1>
+                                <p>{item.description}</p>
+                                <p>directed by: {item.directed_by}</p>
+                                <p>produced by: {item.produced_by}</p>
+                                <p>cinematography: {item.cinematographer}</p>
+                                <p>art direction: {item.art_direction}</p>
+                                <VideoViewer vimeo_id={item.vimeo}/>
+                            </div>
+                            <div>
+                            </div>
                         </div>
-                        <div>
-                        </div>
-                    </div>
                 )
             }))}
         </div>
