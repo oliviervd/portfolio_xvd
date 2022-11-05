@@ -1,38 +1,40 @@
-.App {
-  text-align: center;
+/*TYPOGRAPHY*/
+
+@font-face {
+    font-family: "Basteleur-Bold";
+    src: local("Basteleur-Bold"), url(fonts/Basteleur-Bold.woff);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: "daubenton";
+    src: local("daubenton"), url(fonts/daubentonwebfont.ttf);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+    font-family: daubenton;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+p {
+    font-family: daubenton;
 }
 
-.App-link {
-  color: #61dafb;
+/*GRAPHIC ELEMENTS*/
+.line{
+    border-bottom: black solid 2px;
+    height: 2px;
+    width: 100vw
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.H_margin-20p {
+    margin-left: 20%;
+    margin-right: 20%
+}
+
+.upper{
+    text-transform: uppercase;
+}
+
+.grid-3-7{
+    display: grid;
+    grid-template-columns: 3fr 7fr;
 }
