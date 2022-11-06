@@ -1,11 +1,14 @@
 import React from "react";
 import Vimeo from "@u-wave/react-vimeo";
+import useWindowDimensions from "./getWindowDimensions";
 
 const VideoViewer = (props) => {
 
+    const {width, height} = useWindowDimensions();
+
     return(
-        <div>
-            <Vimeo video={props.vimeo_id}></Vimeo>
+        <div className="video-small">
+            <Vimeo width={width/3} video={props.vimeo_id}></Vimeo>
         </div>
     )
 }
