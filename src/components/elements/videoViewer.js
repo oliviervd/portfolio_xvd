@@ -9,20 +9,28 @@ const VideoViewer = (props) => {
     const scale = props.scale;
     let videoViewer;
 
+    function changeControls(e){
+        e.target.controls = 'true';
+    }
+
     if (props.vimeo_id !== "") {
-        videoViewer = <Vimeo
-            width={width*scale}
-            video={props.vimeo_id}
-            showTitle={false}
-            muted={true}
-            loop={true}
-            showByline={false}
-            showPortrait={false}
-        />
+        videoViewer =
+        <div>
+            <Vimeo
+                width={width*scale}
+                video={props.vimeo_id}
+                showTitle={false}
+                loop={true}
+                showByline={false}
+                showPortrait={false}
+                controls={true}
+                responsive={true}
+            />
+        </div>
     }
 
     return(
-        <div className="video-small">
+        <div>
             {videoViewer}
         </div>
     )
