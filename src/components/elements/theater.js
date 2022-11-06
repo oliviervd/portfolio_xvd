@@ -1,6 +1,6 @@
 import React from "react";
 import Vimeo from "@u-wave/react-vimeo";
-import useWindowDimensions from "./getWindowDimensions";
+import useWindowDimensions from "../utils/getWindowDimensions";
 
 const Theater = (props) => {
 
@@ -17,6 +17,7 @@ const Theater = (props) => {
                    width={width}
                    showTitle={false}
                    muted={true}
+                   loop={true}
             />
         </div>
     )
