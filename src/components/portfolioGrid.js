@@ -1,6 +1,8 @@
 import React from "react";
 import VideoViewer from "./videoViewer";
 import useGoogleSheets from "use-google-sheets";
+import {fetchDescription, fetchDirectedBy, fetchProducedBy, fetchCinematographer, fetchArtDirection} from "./db_parser";
+
 
 const PortfolioGrid = (props) => {
 
@@ -29,20 +31,32 @@ const PortfolioGrid = (props) => {
         <div>
             {_portfolio.map((item => {
                 console.log(item.vimeo);
-                //todo: add if statements to show only if value
+                //todo: add statements to show only if value
+
+                let description, directed_by, produced_by, cinematography, art_direction
+                // description
+                description = fetchDescription(item);
+                directed_by = fetchDirectedBy(item);
+                produced_by = fetchProducedBy(item);
+                cinematography = fetchCinematographer(item);
+                art_direction = fetchArtDirection(item);
+
                 return(
-                        <div>
+                        <div className='grid-3-7'>
                             <div>
-                                <h1>{item.title}</h1>
-                                <p>{item.description}</p>
-                                <p>directed by: {item.directed_by}</p>
-                                <p>produced by: {item.produced_by}</p>
-                                <p>cinematography: {item.cinematographer}</p>
-                                <p>art direction: {item.art_direction}</p>
                                 <VideoViewer vimeo_id={item.vimeo}/>
                             </div>
                             <div>
+                                <div className="line">
+                                    <h1>{item.title}</h1>
+                                    {description}
+                                    {directed_by}
+                                    {produced_by}
+                                    {cinematography}
+                                    {art_direction}
+                                </div>
                             </div>
+
                         </div>
                 )
             }))}
