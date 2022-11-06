@@ -1,8 +1,7 @@
 import React from "react";
 import VideoViewer from "./videoViewer";
 import useGoogleSheets from "use-google-sheets";
-import {fetchDescription, fetchDirectedBy, fetchProducedBy, fetchCinematographer, fetchArtDirection} from "./db_parser";
-
+import {fetchDescription, fetchDirectedBy, fetchProducedBy, fetchCinematographer, fetchArtDirection} from "../utils/db_parser";
 
 const PortfolioGrid = (props) => {
 
@@ -30,24 +29,28 @@ const PortfolioGrid = (props) => {
     return(
         <div>
             {_portfolio.map((item => {
-                console.log(item.vimeo);
-                //todo: add statements to show only if value
+                let sort;
+                let kind;
+                sort = props.kind;
+                kind = item.kind;
 
-                let description, directed_by, produced_by, cinematography, art_direction
-                // description
-                description = fetchDescription(item);
-                directed_by = fetchDirectedBy(item);
-                produced_by = fetchProducedBy(item);
-                cinematography = fetchCinematographer(item);
-                art_direction = fetchArtDirection(item);
+                if (kind.trim() === sort.trim()) {
 
-                return(
-                        <div className='grid-3-7'>
+                    let description, directed_by, produced_by, cinematography, art_direction
+                    // description
+                    description = fetchDescription(item);
+                    directed_by = fetchDirectedBy(item);
+                    produced_by = fetchProducedBy(item);
+                    cinematography = fetchCinematographer(item);
+                    art_direction = fetchArtDirection(item);
+
+                    return(
+                        <div className='grid-7-3 portfolio-container'>
                             <div>
-                                <VideoViewer vimeo_id={item.vimeo}/>
+                                <VideoViewer scale="0.7" vimeo_id={item.vimeo}/>
                             </div>
                             <div>
-                                <div className="line">
+                                <div className="portfolio-container_infobox">
                                     <h1>{item.title}</h1>
                                     {description}
                                     {directed_by}
@@ -58,7 +61,9 @@ const PortfolioGrid = (props) => {
                             </div>
 
                         </div>
-                )
+                    )
+                }
+
             }))}
         </div>
     )
