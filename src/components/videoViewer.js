@@ -8,9 +8,9 @@ const VideoViewer = (props) => {
 
     return(
         <div className="video-small">
-            <Vimeo width={width/3} video={props.vimeo_id}></Vimeo>
+            <Vimeo width={width*0.2} video={props.vimeo_id}></Vimeo>
         </div>
     )
 }
 
-export default VideoViewer
+export default VideoViewer;
