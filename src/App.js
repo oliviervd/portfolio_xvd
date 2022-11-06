@@ -1,6 +1,6 @@
 import './App.css';
-import PortfolioGrid from "./components/portfolioGrid";
-import Theater from "./components/theater";
+import PortfolioGrid from "./components/elements/portfolioGrid";
+import Theater from "./components/elements/theater";
 
 function App() {
 
@@ -22,13 +22,6 @@ function App() {
                 <div className="line"/>
 
                 <Theater vimeo_id="668564452"/>
-
-                <div>
-                    <div className="H_margin-20p">
-                        <PortfolioGrid/>
-                    </div>
-                 </div>
-
             </div>
 
 
