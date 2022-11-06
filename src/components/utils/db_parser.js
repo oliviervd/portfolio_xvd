@@ -41,3 +41,10 @@ export function fetchArtDirection(i) {
         return <p>art direction: {i.art_direction}</p>
     };
 }
+
+export function fetchTags(i) {
+    if (i.tagList !== "") {
+        let tags = i.tagList;
+        return tags;
+    }
+}

@@ -68,12 +68,18 @@ p {
     grid-template-columns: 7fr 3fr;
 }
 
+.grid_v_7-3{
+    display: grid;
+    grid-template-rows: 7fr 3fr;
+}
+
 .portfolio-container{
-    height: fit-content;
+
 }
 
 .portfolio-container_infobox{
     padding: 20px;
+    height: fit-content;
 }
 
 .menu-bar{
@@ -88,12 +94,29 @@ p {
     text-decoration: none;
 }
 
+.tags{
+    padding: 20px;
+    display: grid;
+    height: 20px;
+    justify-content: left;
+    grid-template-columns: repeat(5, auto);
+}
+
+.tag{
+    border: black 1px solid;
+    justify-content: left;
+    text-align: center;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 5px;
+}
+
 /* media players */
 
 .theater{
     gap: 20px
 }
 
-.video-small{
-    width: 100%;
+.video{
+    padding:2px;
 }

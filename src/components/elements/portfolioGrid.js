@@ -1,7 +1,7 @@
 import React from "react";
 import VideoViewer from "./videoViewer";
 import useGoogleSheets from "use-google-sheets";
-import {fetchDescription, fetchDirectedBy, fetchProducedBy, fetchCinematographer, fetchArtDirection} from "../utils/db_parser";
+import {fetchDescription, fetchDirectedBy, fetchProducedBy, fetchCinematographer, fetchArtDirection, fetchTags} from "../utils/db_parser";
 
 const PortfolioGrid = (props) => {
 
@@ -36,17 +36,23 @@ const PortfolioGrid = (props) => {
 
                 if (kind.trim() === sort.trim()) {
 
-                    let description, directed_by, produced_by, cinematography, art_direction
+                    let description, directed_by, produced_by, cinematography, art_direction, tags
                     // description
                     description = fetchDescription(item);
                     directed_by = fetchDirectedBy(item);
                     produced_by = fetchProducedBy(item);
                     cinematography = fetchCinematographer(item);
                     art_direction = fetchArtDirection(item);
+                    tags = fetchTags(item);
+
+                    tags = tags.split(",");
+                    const listTags = tags.map((tag)=>
+                        <div className="tag">{tag}</div>
+                    );
 
                     return(
                         <div className='grid-7-3 portfolio-container'>
-                            <div>
+                            <div className="video">
                                 <VideoViewer scale="0.7" vimeo_id={item.vimeo}/>
                             </div>
                             <div>
@@ -57,6 +63,9 @@ const PortfolioGrid = (props) => {
                                     {produced_by}
                                     {cinematography}
                                     {art_direction}
+                                </div>
+                                <div className="tags">
+                                    {listTags}
                                 </div>
                             </div>
 
