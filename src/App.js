@@ -18,12 +18,12 @@ function App() {
 
                 </div>
 
-                <div className="line"></div>
-                <div className="line"></div>
+                <div className="line"/>
+                <div className="line"/>
 
                 <Theater vimeo_id="668564452"/>
 
-                <div className="grid-3-7">
+                <div>
                     <div className="H_margin-20p">
                         <PortfolioGrid/>
                     </div>
