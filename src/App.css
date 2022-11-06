@@ -14,6 +14,14 @@ h1 {
     font-family: daubenton;
 }
 
+h2{
+    font-family: daubenton;
+}
+
+h3{
+    font-family: daubenton;
+}
+
 p {
     font-family: daubenton;
 }
@@ -21,12 +29,15 @@ p {
     width: 100%;
 }
 
+
 /*GRAPHIC ELEMENTS*/
 .line{
     border-bottom: black solid 2px;
     height: 2px;
     width: 100%;
 }
+
+/* layout */
 
 .H_margin-20p {
     margin-left: 20%;
@@ -37,16 +48,50 @@ p {
     text-transform: uppercase;
 }
 
+.grid-3-3-3{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-3-4-3{
+    display: grid;
+    grid-template-columns: 3fr 4fr 3fr;
+}
+
 .grid-3-7{
     display: grid;
     grid-template-columns: 3fr 7fr;
 }
 
+.grid-7-3{
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+}
+
+.portfolio-container{
+    height: fit-content;
+}
+
+.portfolio-container_infobox{
+    padding: 20px;
+}
+
+.menu-bar{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.menu-item{
+    text-transform: none;
+    color: black;
+    text-transform: none;
+    text-decoration: none;
+}
+
 /* media players */
 
 .theater{
-    width: 100vw;
-    height: 70vh;
+    gap: 20px
 }
 
 .video-small{
