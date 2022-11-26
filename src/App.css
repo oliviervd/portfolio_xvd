@@ -1,29 +1,24 @@
 /*TYPOGRAPHY*/
 
 @font-face {
-    font-family: "Basteleur-Bold";
-    src: local("Basteleur-Bold"), url(fonts/Basteleur-Bold.woff);
-}
-
-@font-face {
-    font-family: "daubenton";
-    src: local("daubenton"), url(fonts/daubentonwebfont.ttf);
+    font-family: "KWBio27-Display";
+    src: local("KWBio27-Display"), url("fonts/KWBio27-Display.otf");
 }
 
 h1 {
-    font-family: daubenton;
+    font-family: "KWBio27-Display";
 }
 
 h2{
-    font-family: daubenton;
+    font-family: "KWBio27-Display";
 }
 
 h3{
-    font-family: daubenton;
+    font-family: "KWBio27-Display";
 }
 
 p {
-    font-family: daubenton;
+    font-family: "KWBio27-Display";
 }
 .full_width{
     width: 100%;

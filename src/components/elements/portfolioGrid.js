@@ -44,8 +44,11 @@ const PortfolioGrid = (props) => {
                     cinematography = fetchCinematographer(item);
                     art_direction = fetchArtDirection(item);
                     tags = fetchTags(item);
+                    console.log(tags);
+
 
                     tags = tags.split(",");
+
                     const listTags = tags.map((tag)=>
                         <div className="tag">{tag}</div>
                     );
