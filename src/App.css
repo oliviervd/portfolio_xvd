@@ -7,18 +7,22 @@
 
 h1 {
     font-family: "KWBio27-Display";
+    margin: 20px;
 }
 
 h2{
     font-family: "KWBio27-Display";
+    margin: 20px;
 }
 
 h3{
     font-family: "KWBio27-Display";
+    margin: 20px;
 }
 
 p {
     font-family: "KWBio27-Display";
+    margin: 20px;
 }
 .full_width{
     width: 100vw;

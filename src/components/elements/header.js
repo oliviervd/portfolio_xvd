@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 const Header = () => {
     return(
         <div>
-            <div className="grid-3-4-3 line-bottom">
+            <div className="line-bottom">
                 <div>
                     <Link className="menu-item" to={"../"}>
                         <h1 className="upper">Xavier Van D'huynslager</h1>
