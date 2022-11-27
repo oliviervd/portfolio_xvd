@@ -5,6 +5,7 @@ const Menu = () => {
 
     return(
         <div className="menu-bar grid-3-3-3">
+            {/*
             <Link className="menu-item" to={"../narrative"}>
                 <h2>{`narrative \n content`}</h2>
             </Link>
@@ -14,6 +15,7 @@ const Menu = () => {
             <Link className="menu-item" to={"../cleint-space"}>
                 <h2>{`client \n space`}</h2>
             </Link>
+            */}
         </div>
     )
 }

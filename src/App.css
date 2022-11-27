@@ -21,15 +21,31 @@ p {
     font-family: "KWBio27-Display";
 }
 .full_width{
-    width: 100%;
+    width: 100vw;
+}
+
+.full_height{
+    height:100vh
 }
 
 
 /*GRAPHIC ELEMENTS*/
-.line{
-    border-bottom: black solid 2px;
-    height: 2px;
+.lineBottom{
+    border-bottom: black dotted 1px;
     width: 100%;
+}
+
+.lineTop{
+    border-top: black dotted 1px;
+    width: 100%;
+}
+
+.lineV {
+    border-right: black dotted 1px;
+}
+
+.scrollContainer{
+
 }
 
 /* layout */
@@ -66,6 +82,16 @@ p {
 .grid_v_7-3{
     display: grid;
     grid-template-rows: 7fr 3fr;
+}
+
+.grid_even--3{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gridH-20-1-79{
+    display: grid;
+    grid-template-rows: 20vh 1vh 79vh;
 }
 
 .portfolio-container{
