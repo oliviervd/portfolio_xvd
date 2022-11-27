@@ -1,6 +1,26 @@
 import React from "react";
 
 // reusable functions to fetch information from google spreadsheet.
+export function fetchID(i) {
+    let id;
+    id = i.id
+    return id;
+}
+
+export function fetchVimeo(i) {
+    let vimeo;
+    if (i.vimeo !== "") {
+        vimeo = i.vimeo;
+    }
+    return vimeo
+}
+
+export function fetchHighlight(i) {
+    let highlight;
+    highlight = i.highlight === "YES";
+    return highlight
+}
+
 
 export function fetchType(i) {
     let type;
@@ -12,21 +32,27 @@ export function fetchType(i) {
     return type;
 }
 
+export function fetchTitle(i) {
+    if (i.title !== ""){
+        return <>{i.title}</>
+    }
+}
+
 export function fetchDescription(i) {
     if (i.description !== "") {
-        return <p>{i.description}</p>;
+        return <>{i.description}</>;
     };
 }
 
 export function fetchDirectedBy(i) {
     if (i.directed_by !== "") {
-        return <p>directed by: {i.directed_by}</p>
+        return <>{i.directed_by}</>
     };
 }
 
 export function fetchProducedBy(i) {
     if (i.produced_by !== "") {
-        return <p>produced by: {i.produced_by}</p>
+        return <>{i.produced_by}</>
     };
 }
 
