@@ -74,3 +74,10 @@ export function fetchTags(i) {
         return tags;
     }
 }
+
+export function fetchImage(i) {
+    if (i.images !== "") {
+        let im = i.images
+        return im;
+    }
+}

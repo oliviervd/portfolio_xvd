@@ -1,6 +1,6 @@
 import React from "react";
 import useGoogleSheets from "use-google-sheets";
-import {fetchArtDirection, fetchVimeo, fetchDescription, fetchDirectedBy, fetchTitle, fetchID} from "../utils/db_parser";
+import {fetchImage, fetchArtDirection, fetchVimeo, fetchDescription, fetchDirectedBy, fetchTitle, fetchID} from "../utils/db_parser";
 import VideoViewer from "./videoViewer";
 
 const PortfolioElement = (props) => {
@@ -37,20 +37,23 @@ const PortfolioElement = (props) => {
     return (
        <div>
            {_portfolio.map((item => {
-               let description, title, directed_by, vimeo_id, sort, kind;
+               let description, title, directed_by, vimeo_id, sort, kind, img;
                description = fetchDescription(item)
                title = fetchTitle(item);
                directed_by = fetchDirectedBy(item);
                vimeo_id = fetchVimeo(item);
                sort = props.kind;
                kind = item.kind;
+               img = fetchImage(item)
 
                if (kind.trim() === sort.trim()) {
                    return(
                        <div>
                            <div>
+                               <div className="blackbox"></div>
                                <h1 className="accent upper">{title}</h1>
                                <VideoViewer vimeo_id={vimeo_id}/>
+                               <img className="image_fit" src={img}/>
                                <p>{directed_by}</p>
                                <p>{description}</p>
                            </div>

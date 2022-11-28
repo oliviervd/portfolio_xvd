@@ -96,8 +96,9 @@ p {
     border-right: black dotted 1px;
 }
 
-.scrollContainer{
-
+.blackbox{
+    height: 10px;
+    background: black;
 }
 
 .image_fit{
