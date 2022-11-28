@@ -8,7 +8,7 @@ const Header = () => {
             <div className="line-bottom">
                 <div>
                     <Link className="menu-item" to={"../"}>
-                        <h1 className="upper">Xavier Van D'huynslager</h1>
+                        <h1 className="upper accent">Xavier Van D'huynslager</h1>
                     </Link>
                     <p>
                         Xavier Van D'huynslager is a freelance Director of Photography based in Ghent, Belgium.

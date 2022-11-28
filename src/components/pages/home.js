@@ -5,7 +5,7 @@ import PortfolioElement from "../elements/PortfolioElement";
 
 const Home = () => {
     return(
-        <div style={{height:"100vh", overflow: "hidden"}}>
+        <div className="full_page">
             <div className="grid-30-5-30-5-30 full_page">
                 {/* first column - highlights + header
                 todo: add map function
@@ -15,7 +15,6 @@ const Home = () => {
                         <Header/>
                     </div>
                     <br/>
-                    <img className="image_fit" src="https://static.fabrik.io/vgy/f4adf83578ba1dea.jpg?lossless=1&w=2880&h=5120&fit=max&s=9499b1ffc3c0de7b045b8583801aae09"/>
 
                     <div/>
                     <div className={"lineBottom lineTop"}>
@@ -25,7 +24,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="lineV">
-                    <h2 className="text-rotate">narrative content</h2>
+                    <h2 className="text-rotate accent upper">narrative content</h2>
                 </div>
                 {/* second column - narrative
                 todo: add map function
@@ -37,7 +36,7 @@ const Home = () => {
 
                 </div>
                 <div className="lineV">
-                    <h2 className="text-rotate">branded content</h2>
+                    <h2 className="text-rotate accent upper">branded content</h2>
                 </div>
 
                 {/* third column - branded

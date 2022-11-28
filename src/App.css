@@ -6,7 +6,7 @@
     right: 0;
     left: 0;
     top: 0;
-
+    overflow: hidden;
 }
 
 @font-face {
@@ -14,24 +14,46 @@
     src: local("KWBio27-Display"), url("fonts/KWBio27-Display.otf");
 }
 
+@font-face {
+    font-family: "libertinage";
+    src: local("libertinage"), url("fonts/Libertinage.ttf");
+}
+
+@font-face {
+    font-family: "Ume";
+    src: local("Ume"), url("fonts/Ume-P-Gothic_Balsa.ttf");
+}
+
 h1 {
-    font-family: "KWBio27-Display";
+    font-family: "Ume";
     margin: 20px;
 }
 
 h2{
-    font-family: "KWBio27-Display";
+    font-family: "Ume";
     margin: 20px;
 }
 
 h3{
-    font-family: "KWBio27-Display";
+    font-family: "Ume";
     margin: 20px;
 }
 
 p {
-    font-family: "KWBio27-Display";
+    font-family: "Ume";
     margin: 20px;
+}
+
+.uppercase{
+
+}
+
+.accent{
+    font-family: "libertinage";
+}
+
+.italic{
+    font-style: italic;
 }
 
 .text-rotate{

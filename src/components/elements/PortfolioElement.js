@@ -26,6 +26,14 @@ const PortfolioElement = (props) => {
         })
     })
 
+    let i = 0, ps = document.getElementsByTagName("p");
+    let len
+    for(len = ps.length; i<len; i++)
+    {
+        let p = ps[i];
+        p.innerHTML = p.innerHTML.replace(/\b([A-Z]{2,})\b/g, "<b>$1</b>");
+    }
+
     return (
        <div>
            {_portfolio.map((item => {
@@ -41,7 +49,7 @@ const PortfolioElement = (props) => {
                    return(
                        <div>
                            <div>
-                               <h1>{title}</h1>
+                               <h1 className="accent upper">{title}</h1>
                                <VideoViewer vimeo_id={vimeo_id}/>
                                <p>{directed_by}</p>
                                <p>{description}</p>
