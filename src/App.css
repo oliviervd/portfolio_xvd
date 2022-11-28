@@ -1,5 +1,14 @@
 /*TYPOGRAPHY*/
 
+.full_page{
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+
+}
+
 @font-face {
     font-family: "KWBio27-Display";
     src: local("KWBio27-Display"), url("fonts/KWBio27-Display.otf");
@@ -24,6 +33,23 @@ p {
     font-family: "KWBio27-Display";
     margin: 20px;
 }
+
+.text-rotate{
+    transform: rotate(90deg);
+    /* Legacy vendor prefixes that you probably don't need... */
+    /* Safari */
+    -webkit-transform: rotate(90deg);
+    /* Firefox */
+    -moz-transform: rotate(90deg);
+    /* IE */
+    -ms-transform: rotate(90deg);
+    /* Opera */
+    -o-transform: rotate(90deg);
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+}
+
 .full_width{
     width: 100vw;
 }
@@ -52,6 +78,12 @@ p {
 
 }
 
+.image_fit{
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+}
+
 /* layout */
 
 .H_margin-20p {
@@ -66,6 +98,12 @@ p {
 .grid-3-3-3{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-30-5-30-5-30{
+    display: grid;
+    grid-template-columns: 30vw 5vw 30vw 5vw 30vw;
+
 }
 
 .grid-3-4-3{
@@ -144,4 +182,39 @@ p {
 
 .video{
     padding:2px;
+}
+
+.scroll-div{
+    -moz-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+
+    transform: translateY(100%);
+    -moz-animation: scroll-down 350s linear infinite;
+    -webkit-animation: scroll-down 350s linear infinite;
+    animation: scroll-down 350s linear infinite;
+}
+
+
+@-moz-keyframes scroll-down {
+    from { -moz-transform: translateY(100%); }
+    to { -moz-transform: translateY(-100%);}
+}
+
+/* CHROMIE */
+@-webkit-keyframes scroll-down {
+    from { -webkit-transform: translateX(100%); }
+    to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes scroll-down {
+    from {
+        -moz-transform: translateY(100%);
+        -webkit-transform: translateY(100%);
+        transform: translateY(00%);
+    }
+    to {
+        -moz-transform: translateY(-100%);
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
 }

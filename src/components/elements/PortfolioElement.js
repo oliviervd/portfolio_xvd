@@ -29,21 +29,28 @@ const PortfolioElement = (props) => {
     return (
        <div>
            {_portfolio.map((item => {
-               let description, title, directed_by, vimeo_id;
+               let description, title, directed_by, vimeo_id, sort, kind;
                description = fetchDescription(item)
                title = fetchTitle(item);
                directed_by = fetchDirectedBy(item);
                vimeo_id = fetchVimeo(item);
+               sort = props.kind;
+               kind = item.kind;
 
-               return(
-                   <div>
-                       <h1>{title}</h1>
-                       <VideoViewer vimeo_id={vimeo_id}/>
-                       <p>{directed_by}</p>
-                       <p>{description}</p>
+               if (kind.trim() === sort.trim()) {
+                   return(
+                       <div>
+                           <div>
+                               <h1>{title}</h1>
+                               <VideoViewer vimeo_id={vimeo_id}/>
+                               <p>{directed_by}</p>
+                               <p>{description}</p>
+                           </div>
+                       </div>
 
-                   </div>
-               )
+
+                   )
+               }
 
            }))}
        </div>

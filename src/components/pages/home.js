@@ -5,8 +5,8 @@ import PortfolioElement from "../elements/PortfolioElement";
 
 const Home = () => {
     return(
-        <div>
-            <div className="grid_even--3">
+        <div style={{height:"100vh", overflow: "hidden"}}>
+            <div className="grid-30-5-30-5-30 full_page">
                 {/* first column - highlights + header
                 todo: add map function
                 */}
@@ -14,6 +14,9 @@ const Home = () => {
                     <div className={"lineBottom lineTop"}>
                         <Header/>
                     </div>
+                    <br/>
+                    <img className="image_fit" src="https://static.fabrik.io/vgy/f4adf83578ba1dea.jpg?lossless=1&w=2880&h=5120&fit=max&s=9499b1ffc3c0de7b045b8583801aae09"/>
+
                     <div/>
                     <div className={"lineBottom lineTop"}>
                         <h3>scroller highlighted work</h3>
@@ -22,18 +25,31 @@ const Home = () => {
                         </Suspense>
                     </div>
                 </div>
+                <div className="lineV">
+                    <h2 className="text-rotate">narrative content</h2>
+                </div>
                 {/* second column - narrative
                 todo: add map function
                 */}
-                <div className={"lineV"}>
+                <div className={"lineV scroll-div"}>
                     <h3>scroller narrative work</h3>
-                    <PortfolioElement/>
+                    <PortfolioElement kind={"narrative content"}/>
+                    <PortfolioElement kind={"narrative content"}/>
+                    <PortfolioElement kind={"narrative content"}/>
+
                 </div>
+                <div className="lineV">
+                    <h2 className="text-rotate">branded content</h2>
+                </div>
+
                 {/* third column - branded
                 todo: add map function
                 */}
-                <div className={"lineV"}>
+                <div className={"lineV scroll-div"}>
                     <h3>scroller branded work</h3>
+                    <PortfolioElement kind={"branded content"}/>
+                    <PortfolioElement kind={"branded content"}/>
+                    <PortfolioElement kind={"branded content"}/>
                 </div>
             </div>
             {/*
