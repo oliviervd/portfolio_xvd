@@ -216,9 +216,11 @@ p {
     -webkit-transform: translateY(-100%);
 
     transform: translateY(100%);
-    -moz-animation: scroll-down 350s linear infinite;
-    -webkit-animation: scroll-down 350s linear infinite;
-    animation: scroll-down 350s linear infinite;
+    -moz-animation: scroll-down 35s linear infinite;
+    -webkit-animation: scroll-down 35s linear infinite;
+    animation: scroll-down 35s linear infinite;
+    overflow-y: auto;
+
 }
 
 

@@ -1,7 +1,8 @@
-import React, {Suspense} from "react";
-import Header from "../elements/header";
+import React, {Suspense, lazy} from "react";
 import HighlightElement from "../elements/HighlightElement";
-import PortfolioElement from "../elements/PortfolioElement";
+
+const Header = lazy(()=>import("../elements/header"))
+const PortfolioElement = lazy(()=> import("../elements/PortfolioElement"))
 
 const Home = () => {
     return(
@@ -12,7 +13,9 @@ const Home = () => {
                 */}
                 <div className="gridH-20-1-79 lineV">
                     <div className={"lineBottom lineTop"}>
-                        <Header/>
+                        <Suspense>
+                            <Header/>
+                        </Suspense>
                     </div>
                     <br/>
 
@@ -30,10 +33,15 @@ const Home = () => {
                 todo: add map function
                 */}
                 <div className={"lineV scroll-div"}>
-                    <PortfolioElement kind={"narrative content"}/>
-                    <PortfolioElement kind={"narrative content"}/>
-                    <PortfolioElement kind={"narrative content"}/>
-
+                    <Suspense>
+                        <PortfolioElement kind={"narrative content"}/>
+                    </Suspense>
+                    <Suspense>
+                        <PortfolioElement kind={"narrative content"}/>
+                    </Suspense>
+                    <Suspense>
+                        <PortfolioElement kind={"narrative content"}/>
+                    </Suspense>
                 </div>
                 <div className="lineV">
                     <h2 className="text-rotate accent upper">branded content</h2>
@@ -42,10 +50,16 @@ const Home = () => {
                 {/* third column - branded
                 todo: add map function
                 */}
-                <div className={"lineV scroll-div"}>
-                    <PortfolioElement kind={"branded content"}/>
-                    <PortfolioElement kind={"branded content"}/>
-                    <PortfolioElement kind={"branded content"}/>
+                <div className={"lineV scroll-div"} style={{overflowY: "auto"}}>
+                    <Suspense>
+                        <PortfolioElement kind={"branded content"}/>
+                    </Suspense>
+                    <Suspense>
+                        <PortfolioElement kind={"branded content"}/>
+                    </Suspense>
+                    <Suspense>
+                        <PortfolioElement kind={"branded content"}/>
+                    </Suspense>
                 </div>
             </div>
             {/*
