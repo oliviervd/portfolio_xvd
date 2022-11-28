@@ -226,7 +226,6 @@ p {
     -webkit-animation: scroll-down 350s linear infinite;
     animation: scroll-down 350s linear infinite;
 
-    overflow-y: auto;
 
 }
 
