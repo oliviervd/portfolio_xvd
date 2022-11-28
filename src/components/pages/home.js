@@ -19,7 +19,6 @@ const Home = () => {
 
                     <div/>
                     <div className={"lineBottom lineTop"}>
-                        <h3>scroller highlighted work</h3>
                         <Suspense>
                             <HighlightElement/>
                         </Suspense>
@@ -32,7 +31,6 @@ const Home = () => {
                 todo: add map function
                 */}
                 <div className={"lineV scroll-div"}>
-                    <h3>scroller narrative work</h3>
                     <PortfolioElement kind={"narrative content"}/>
                     <PortfolioElement kind={"narrative content"}/>
                     <PortfolioElement kind={"narrative content"}/>
@@ -46,7 +44,6 @@ const Home = () => {
                 todo: add map function
                 */}
                 <div className={"lineV scroll-div"}>
-                    <h3>scroller branded work</h3>
                     <PortfolioElement kind={"branded content"}/>
                     <PortfolioElement kind={"branded content"}/>
                     <PortfolioElement kind={"branded content"}/>
