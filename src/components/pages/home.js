@@ -50,17 +50,18 @@ const Home = () => {
                 {/* third column - branded
                 todo: add map function
                 */}
-                <div className={"lineV scroll-div"} style={{overflowY: "auto"}}>
-                    <Suspense>
-                        <PortfolioElement kind={"branded content"}/>
-                    </Suspense>
-                    <Suspense>
-                        <PortfolioElement kind={"branded content"}/>
-                    </Suspense>
-                    <Suspense>
-                        <PortfolioElement kind={"branded content"}/>
-                    </Suspense>
-                </div>
+                    <div className={"lineV scroll-div scrollable"} style={{overflowY: "auto"}}>
+                        <Suspense>
+                            <PortfolioElement kind={"branded content"}/>
+                        </Suspense>
+                        <Suspense>
+                            <PortfolioElement kind={"branded content"}/>
+                        </Suspense>
+                        <Suspense>
+                            <PortfolioElement kind={"branded content"}/>
+                        </Suspense>
+                    </div>
+
             </div>
             {/*
             <div className="gridH-20-1-79">
