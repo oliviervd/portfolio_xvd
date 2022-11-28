@@ -1,6 +1,6 @@
 import React from "react";
 import useGoogleSheets from "use-google-sheets";
-import {fetchImage, fetchArtDirection, fetchVimeo, fetchDescription, fetchDirectedBy, fetchTitle, fetchID} from "../utils/db_parser";
+import {fetchImage, fetchVimeo, fetchDescription, fetchDirectedBy, fetchTitle, fetchID} from "../utils/db_parser";
 import VideoViewer from "./videoViewer";
 
 const PortfolioElement = (props) => {
