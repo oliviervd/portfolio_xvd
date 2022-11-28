@@ -32,15 +32,15 @@ const Home = () => {
                 {/* second column - narrative
                 todo: add map function
                 */}
-                <div className={"lineV scroll-div"}>
+                <div className={"lineV rowScroll scroll-div"}>
                     <Suspense>
-                        <PortfolioElement kind={"narrative content"}/>
+                        <PortfolioElement className="" kind={"narrative content"}/>
                     </Suspense>
                     <Suspense>
-                        <PortfolioElement kind={"narrative content"}/>
+                        <PortfolioElement className="" kind={"narrative content"}/>
                     </Suspense>
                     <Suspense>
-                        <PortfolioElement kind={"narrative content"}/>
+                        <PortfolioElement className="" kind={"narrative content"}/>
                     </Suspense>
                 </div>
                 <div className="lineV">
@@ -50,15 +50,15 @@ const Home = () => {
                 {/* third column - branded
                 todo: add map function
                 */}
-                    <div className={"lineV scroll-div scrollable"} style={{overflowY: "auto"}}>
+                    <div className={"lineV scroll-div"}>
                         <Suspense>
-                            <PortfolioElement kind={"branded content"}/>
+                            <PortfolioElement className="" kind={"branded content"}/>
                         </Suspense>
                         <Suspense>
-                            <PortfolioElement kind={"branded content"}/>
+                            <PortfolioElement className="" kind={"branded content"}/>
                         </Suspense>
                         <Suspense>
-                            <PortfolioElement kind={"branded content"}/>
+                            <PortfolioElement className="" kind={"branded content"}/>
                         </Suspense>
                     </div>
 

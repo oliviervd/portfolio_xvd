@@ -50,12 +50,13 @@ const PortfolioElement = (props) => {
                    return(
                        <div>
                            <div>
-                               <div className="blackbox"></div>
                                <h1 className="accent upper">{title}</h1>
                                <VideoViewer vimeo_id={vimeo_id}/>
                                <img className="image_fit" src={img}/>
                                <p>{directed_by}</p>
                                <p>{description}</p>
+                               <div className="blackbox"></div>
+
                            </div>
                        </div>
 
