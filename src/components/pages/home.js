@@ -50,7 +50,7 @@ const Home = () => {
                 {/* third column - branded
                 todo: add map function
                 */}
-                    <div className={"lineV scroll-div"}>
+                    <div className={"scroll-div"}>
                         <Suspense>
                             <PortfolioElement className="" kind={"branded content"}/>
                         </Suspense>
