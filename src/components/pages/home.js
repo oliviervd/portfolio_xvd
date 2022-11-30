@@ -7,11 +7,11 @@ const PortfolioElement = lazy(()=> import("../elements/PortfolioElement"))
 const Home = () => {
     return(
         <div className="full_page">
-            <div className="grid-30-5-30-5-30">
+            <div className="grid-30-5-30-5-30 full_page">
                 {/* first column - highlights + header
                 todo: add map function
                 */}
-                <div className="gridH-20-1-79 lineV">
+                <div className="gridH-20-1-79 lineV" style={{overflow: "hidden"}}>
                     <div className={"lineBottom lineTop"}>
                         <Suspense>
                             <Header/>
@@ -50,7 +50,7 @@ const Home = () => {
                 {/* third column - branded
                 todo: add map function
                 */}
-                    <div className={"scroll-div"}>
+                    <div className={"lineV rowScroll scroll-div"}>
                         <Suspense>
                             <PortfolioElement className="" kind={"branded content"}/>
                         </Suspense>
