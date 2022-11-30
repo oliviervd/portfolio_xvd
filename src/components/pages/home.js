@@ -7,7 +7,7 @@ const PortfolioElement = lazy(()=> import("../elements/PortfolioElement"))
 const Home = () => {
     return(
         <div className="full_page">
-            <div className="grid-30-5-30-5-30 full_page">
+            <div className="grid-30-5-30-5-30">
                 {/* first column - highlights + header
                 todo: add map function
                 */}
