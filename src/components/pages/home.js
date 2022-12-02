@@ -1,10 +1,14 @@
 import React, {Suspense, lazy} from "react";
 import HighlightElement from "../elements/HighlightElement";
+import getDIVHeight from "../utils/getWindowDimensions";
 
 const Header = lazy(()=>import("../elements/header"))
 const PortfolioElement = lazy(()=> import("../elements/PortfolioElement"))
 
 const Home = () => {
+
+    console.log(getDIVHeight("narrative"));
+
     return(
         <div className="full_page">
             <div className="grid-30-5-30-5-30 full_page">
@@ -35,7 +39,7 @@ const Home = () => {
                 */}
                 <div className={"lineV rowScroll_narrative"}>
                     <Suspense>
-                        <PortfolioElement className="PortfolioElement_narrative" kind={"narrative content"}/>
+                        <PortfolioElement class={"narrative"} className="PortfolioElement_narrative" kind={"narrative content"}/>
                     </Suspense>
                     <Suspense>
                         <PortfolioElement className="PortfolioElement_narrative" kind={"narrative content"}/>

@@ -33,25 +33,25 @@ body{
 }
 
 h1 {
-    font-family: "Ume";
+    font-family: "Ume", sans-serif;
     font-size: 2rem;
     margin: 1rem;
 }
 
 h2{
-    font-family: "Ume";
+    font-family: "Ume", sans-serif;
     font-size: 1.5rem;
     margin: 20px;
 }
 
 h3{
-    font-family: "Ume";
+    font-family: "Ume", sans-serif;
     font-size: 1.2rem;
     margin: 20px;
 }
 
 p {
-    font-family: "Ume";
+    font-family: "Ume", sans-serif;
     font-size: 1rem;
     margin: 20px;
 }
@@ -61,7 +61,7 @@ p {
 }
 
 .accent{
-    font-family: "libertinage";
+    font-family: "libertinage", sans-serif;
 }
 
 .italic{
@@ -243,6 +243,7 @@ p {
 .rowScroll_narrative{
     position: relative;
     top: 0;
+    overflow-y: scroll;
     animation: scroll_narrative 100s linear 1s infinite;
 }
 
@@ -250,6 +251,7 @@ p {
 .rowScroll_branded{
     position: relative;
     top: 0;
+    overflow-y: scroll;
     animation: scroll_branded 100s linear 1s infinite;
 }
 
@@ -268,7 +270,7 @@ p {
 }
 
 @keyframes scroll_narrative {
-    100% {top: -3885px}
+    100% {top: -5000px}
 }
 
 @-moz-keyframes scroll-down {
