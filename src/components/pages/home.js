@@ -30,17 +30,15 @@ const Home = () => {
                     <h2 className="text-rotate accent upper">narrative content</h2>
                 </div>
                 {/* second column - narrative
+                fix : https://stackoverflow.com/questions/34314474/css-infinite-scrolling-div
                 todo: add map function
                 */}
-                <div className={"lineV rowScroll scroll-div"}>
+                <div className={"lineV rowScroll_narrative"}>
                     <Suspense>
-                        <PortfolioElement className="" kind={"narrative content"}/>
+                        <PortfolioElement className="PortfolioElement_narrative" kind={"narrative content"}/>
                     </Suspense>
                     <Suspense>
-                        <PortfolioElement className="" kind={"narrative content"}/>
-                    </Suspense>
-                    <Suspense>
-                        <PortfolioElement className="" kind={"narrative content"}/>
+                        <PortfolioElement className="PortfolioElement_narrative" kind={"narrative content"}/>
                     </Suspense>
                 </div>
                 <div className="lineV">
@@ -50,15 +48,12 @@ const Home = () => {
                 {/* third column - branded
                 todo: add map function
                 */}
-                    <div className={"lineV rowScroll scroll-div"}>
+                    <div className={"lineV rowScroll_branded"}>
                         <Suspense>
-                            <PortfolioElement className="" kind={"branded content"}/>
+                            <PortfolioElement className="PortfolioElement_branded" kind={"branded content"}/>
                         </Suspense>
                         <Suspense>
-                            <PortfolioElement className="" kind={"branded content"}/>
-                        </Suspense>
-                        <Suspense>
-                            <PortfolioElement className="" kind={"branded content"}/>
+                            <PortfolioElement className="PortfolioElement_branded" kind={"branded content"}/>
                         </Suspense>
                     </div>
 

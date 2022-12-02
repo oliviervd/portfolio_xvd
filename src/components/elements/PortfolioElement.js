@@ -56,7 +56,6 @@ const PortfolioElement = (props) => {
                                <p>{directed_by}</p>
                                <p>{description}</p>
                                <div className="blackbox"></div>
-
                            </div>
                        </div>
 

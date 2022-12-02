@@ -192,6 +192,11 @@ p {
     text-decoration: none;
 }
 
+/* --- mobile ---- */
+
+.grid
+
+
 .tags{
     padding: 20px;
     display: grid;
@@ -220,10 +225,32 @@ p {
 }
 
 .rowScroll {
-    height: 400%;
-    overflow-y:auto;
-    overflow-x: hidden;
+    height: auto;
+    overflow-y: visible;
     margin-top: 20px;
+    overflow-y: clip;
+
+}
+
+.PortfolioElement_branded{
+    min-height: 445px;
+}
+
+.PortfolioElement_narrative{
+    min-height: 535px;
+}
+
+.rowScroll_narrative{
+    position: relative;
+    top: 0;
+    animation: scroll_narrative 100s linear 1s infinite;
+}
+
+
+.rowScroll_branded{
+    position: relative;
+    top: 0;
+    animation: scroll_branded 100s linear 1s infinite;
 }
 
 .scroll-div{
@@ -231,9 +258,17 @@ p {
     -webkit-transform: translateY(-100%);
     transform: translateY(100%);
 
-    -moz-animation: scroll-down 250s linear infinite;
-    -webkit-animation: scroll-down 250s linear infinite;
-    animation: scroll-down 250s linear infinite;
+    -moz-animation: scroll-down 150s linear infinite;
+    -webkit-animation: scroll-down 150s linear infinite;
+    animation: scroll-down 100s linear infinite;
+}
+
+@keyframes scroll_branded {
+    100% {top: -3150px}
+}
+
+@keyframes scroll_narrative {
+    100% {top: -3885px}
 }
 
 @-moz-keyframes scroll-down {
