@@ -2,9 +2,11 @@ import React from "react";
 
 // reusable functions to fetch information from google spreadsheet.
 export function fetchID(i) {
-    let id;
-    id = i.id
-    return id;
+    return i.id;
+}
+
+export function fetchTyp(i){
+    return i.type
 }
 
 export function fetchVimeo(i) {

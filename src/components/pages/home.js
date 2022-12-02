@@ -39,10 +39,10 @@ const Home = () => {
                 */}
                 <div className={"lineV rowScroll_narrative"}>
                     <Suspense>
-                        <PortfolioElement className="PortfolioElement_narrative" kind={"narrative content"}/>
+                        <PortfolioElement type={true} className="PortfolioElement_narrative" kind={"narrative content"}/>
                     </Suspense>
                     <Suspense>
-                        <PortfolioElement className="PortfolioElement_narrative" kind={"narrative content"}/>
+                        <PortfolioElement type={true} className="PortfolioElement_narrative" kind={"narrative content"}/>
                     </Suspense>
                 </div>
                 <div className="lineV">
@@ -54,10 +54,10 @@ const Home = () => {
                 */}
                     <div className={"lineV rowScroll_branded"}>
                         <Suspense>
-                            <PortfolioElement className="PortfolioElement_branded" kind={"branded content"}/>
+                            <PortfolioElement type={false} className="PortfolioElement_branded" kind={"branded content"}/>
                         </Suspense>
                         <Suspense>
-                            <PortfolioElement className="PortfolioElement_branded" kind={"branded content"}/>
+                            <PortfolioElement type={false} className="PortfolioElement_branded" kind={"branded content"}/>
                         </Suspense>
                     </div>
 

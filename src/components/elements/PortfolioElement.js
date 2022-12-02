@@ -1,6 +1,14 @@
 import React from "react";
 import useGoogleSheets from "use-google-sheets";
-import {fetchImage, fetchVimeo, fetchDescription, fetchDirectedBy, fetchTitle, fetchID} from "../utils/db_parser";
+import {
+    fetchImage,
+    fetchVimeo,
+    fetchDescription,
+    fetchDirectedBy,
+    fetchTitle,
+    fetchID,
+    fetchType
+} from "../utils/db_parser";
 import VideoViewer from "./videoViewer";
 
 const PortfolioElement = (props) => {
@@ -37,7 +45,7 @@ const PortfolioElement = (props) => {
     return (
        <div>
            {_portfolio.map((item => {
-               let description, title, directed_by, vimeo_id, sort, kind, img;
+               let description, title, directed_by, vimeo_id, sort, kind, img, type;
                description = fetchDescription(item)
                title = fetchTitle(item);
                directed_by = fetchDirectedBy(item);
@@ -45,12 +53,21 @@ const PortfolioElement = (props) => {
                sort = props.kind;
                kind = item.kind;
                img = fetchImage(item)
+               type = fetchType(item)
 
                if (kind.trim() === sort.trim()) {
                    return(
                        <div>
                            <div>
-                               <h1 className="accent upper">{title}</h1>
+                               {props.type &&
+                                   <div className={"grid-1-19"}>
+                                       <p className={"text-rotate upper typeBox"}>{type}</p>
+                                       <h1 className="accent upper">{title}</h1>
+                                   </div>
+                               }
+                               {!props.type &&
+                                   <h1 className="accent upper">{title}</h1>
+                               }
                                <VideoViewer vimeo_id={vimeo_id}/>
                                <img className="image_fit" src={img}/>
                                <p>{directed_by}</p>
