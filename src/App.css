@@ -243,7 +243,6 @@ p {
 .rowScroll_narrative{
     position: relative;
     top: 0;
-    overflow-y: scroll;
     animation: scroll_narrative 100s linear 1s infinite;
 }
 
@@ -251,7 +250,6 @@ p {
 .rowScroll_branded{
     position: relative;
     top: 0;
-    overflow-y: scroll;
     animation: scroll_branded 100s linear 1s infinite;
 }
 

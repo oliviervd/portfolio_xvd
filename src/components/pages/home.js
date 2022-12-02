@@ -39,7 +39,7 @@ const Home = () => {
                 */}
                 <div className={"lineV rowScroll_narrative"}>
                     <Suspense>
-                        <PortfolioElement class={"narrative"} className="PortfolioElement_narrative" kind={"narrative content"}/>
+                        <PortfolioElement className="PortfolioElement_narrative" kind={"narrative content"}/>
                     </Suspense>
                     <Suspense>
                         <PortfolioElement className="PortfolioElement_narrative" kind={"narrative content"}/>
