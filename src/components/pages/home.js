@@ -1,13 +1,17 @@
-import React, {Suspense, lazy} from "react";
+import React, {Suspense, lazy, useState, useLayoutEffect, useRef} from "react";
 import HighlightElement from "../elements/HighlightElement";
-import getDIVHeight from "../utils/getWindowDimensions";
 
 const Header = lazy(()=>import("../elements/header"))
 const PortfolioElement = lazy(()=> import("../elements/PortfolioElement"))
 
 const Home = () => {
 
-    console.log(getDIVHeight("narrative"));
+    const [showWorkID, setShowWorkID] = useState("test");
+    const [detailNarrativeWindowOpen, setDetailNarrativeWindowOpen] = useState(false);
+    const [detailBrandedWindowOpen, setDetailBrandedWindowOpen] = useState(false);
+    //const mainGrid = useRef();
+
+    console.log(showWorkID, detailNarrativeWindowOpen, detailBrandedWindowOpen);
 
     return(
         <div className="full_page">
@@ -39,10 +43,14 @@ const Home = () => {
                 */}
                 <div className={"lineV rowScroll_narrative"}>
                     <Suspense>
-                        <PortfolioElement type={true} className="PortfolioElement_narrative" kind={"narrative content"}/>
+                        <PortfolioElement type={true} className="PortfolioElement_narrative" kind={"narrative content"}
+                                          setShowWorkID = {setShowWorkID} setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
+                                          setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}/>
                     </Suspense>
                     <Suspense>
-                        <PortfolioElement type={true} className="PortfolioElement_narrative" kind={"narrative content"}/>
+                        <PortfolioElement type={true} className="PortfolioElement_narrative" kind={"narrative content"}
+                                          setShowWorkID = {setShowWorkID} setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
+                                          setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}/>
                     </Suspense>
                 </div>
                 <div className="lineV">
@@ -54,34 +62,18 @@ const Home = () => {
                 */}
                     <div className={"lineV rowScroll_branded"}>
                         <Suspense>
-                            <PortfolioElement type={false} className="PortfolioElement_branded" kind={"branded content"}/>
+                            <PortfolioElement type={false} className="PortfolioElement_branded" kind={"branded content"}
+                                              setShowWorkID = {setShowWorkID} setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}
+                                              setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}/>
                         </Suspense>
                         <Suspense>
-                            <PortfolioElement type={false} className="PortfolioElement_branded" kind={"branded content"}/>
+                            <PortfolioElement type={false} className="PortfolioElement_branded" kind={"branded content"}
+                                              setShowWorkID = {setShowWorkID} setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}
+                                              setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}/>
                         </Suspense>
                     </div>
 
             </div>
-            {/*
-            <div className="gridH-20-1-79">
-                <div>
-                    <Header/>
-                </div>
-                <div className={"lineBottom lineTop"}/>
-                <div className="grid_even--3">
-                    <div className="scrollContainer lineV">
-                        highlight
-                    </div>
-                    <div className="scrollContainer lineV">
-                        narrative
-                    </div>
-                    <div className="scrollContainer lineV">
-                        branded
-                    </div>
-                </div>
-            </div>
-            */}
-
         </div>
     )
 }

@@ -5,10 +5,6 @@ export function fetchID(i) {
     return i.id;
 }
 
-export function fetchTyp(i){
-    return i.type
-}
-
 export function fetchVimeo(i) {
     let vimeo;
     if (i.vimeo !== "") {

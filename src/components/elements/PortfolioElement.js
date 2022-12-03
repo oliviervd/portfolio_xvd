@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import useGoogleSheets from "use-google-sheets";
 import {
     fetchImage,
@@ -45,15 +45,29 @@ const PortfolioElement = (props) => {
     return (
        <div>
            {_portfolio.map((item => {
-               let description, title, directed_by, vimeo_id, sort, kind, img, type;
-               description = fetchDescription(item)
-               title = fetchTitle(item);
+               let description, title, directed_by, vimeo_id, sort, kind, _img, type, id;
+               id = fetchID(item); // id of the project (Database).
+               title = fetchTitle(item); // title of the project
+               description = fetchDescription(item) // description of the project
                directed_by = fetchDirectedBy(item);
-               vimeo_id = fetchVimeo(item);
-               sort = props.kind;
-               kind = item.kind;
-               img = fetchImage(item)
+               vimeo_id = fetchVimeo(item); // id to fetch vimeo video
+               sort = props.kind; // feauture, short, ...
+               kind = item.kind; //branded content or narrative content
+               _img = fetchImage(item)
                type = fetchType(item)
+
+               function activateDetailViewer() {
+                   // function to set state of what will be shown in the detail viewer and which one to open.
+                   props.setShowWorkID(id);
+                   if (kind == "narrative content") {
+                       props.setDetailNarrativeWindowOpen(true);
+                       props.setDetailBrandedWindowOpen(false);
+                   }
+                   else if (kind == "branded content") {
+                       props.setDetailBrandedWindowOpen(true);
+                       props.setDetailNarrativeWindowOpen(false);
+                   }
+               }
 
                if (kind.trim() === sort.trim()) {
                    return(
@@ -61,17 +75,35 @@ const PortfolioElement = (props) => {
                            <div>
                                {props.type &&
                                    <div className={"grid-1-19"}>
-                                       <p className={"text-rotate upper typeBox"}>{type}</p>
-                                       <h1 className="accent upper">{title}</h1>
+                                       <p  className={"text-rotate upper typeBox"}>{type}</p>
+                                       <div onClick={activateDetailViewer}>
+                                           <h1 className="accent upper">{title}</h1>
+                                       </div>
                                    </div>
                                }
                                {!props.type &&
-                                   <h1 className="accent upper">{title}</h1>
+                                   <div onClick={activateDetailViewer}>
+                                       <h1 className="accent upper">{title}</h1>
+                                   </div>
                                }
                                <VideoViewer vimeo_id={vimeo_id}/>
-                               <img className="image_fit" src={img}/>
-                               <p>{directed_by}</p>
-                               <p>{description}</p>
+                               <img className="image_fit" src={_img}/>
+
+                               {/*if narrative content display like this*/}
+
+                               { (kind=="narrative content") &&
+                                   <div onClick={activateDetailViewer}>
+                                        <p>{description}</p>
+                                   </div>
+                               }
+
+                               {/*if branded content display like this*/}
+
+                               { (kind=="branded content") &&
+                                   <div onClick={activateDetailViewer}>
+                                       <p>directed by: {directed_by}</p>
+                                   </div>
+                               }
                                <div className="blackbox"></div>
                            </div>
                        </div>
