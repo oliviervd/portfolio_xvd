@@ -10,8 +10,8 @@ const Theater = (props) => {
         height: height
     }
     return(
-        <div style ={divStyle}>
-            <Vimeo className="theater"
+        <div className="theater" style ={divStyle}>
+            <Vimeo
                    video={props.vimeo_id}
                    autoplay={true}
                    width={width*0.65}
