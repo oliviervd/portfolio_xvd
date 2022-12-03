@@ -70,8 +70,9 @@ const PortfolioElement = (props) => {
                        props.setDetailDB(detailDB);
                    }
                    else if (kind === "branded content") {
-                       props.setDetailBrandedWindowOpen(true);
-                       props.setDetailNarrativeWindowOpen(false);
+                       props.setDetailNarrativeWindowOpen(true);
+                       props.setHideNarrative(true);
+                       props.setDetailDB(detailDB);
                    }
                }
 
