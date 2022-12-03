@@ -1,5 +1,4 @@
 import './App.css';
-import PortfolioGrid from "./components/elements/portfolioGrid";
 import Theater from "./components/elements/theater";
 
 function App() {

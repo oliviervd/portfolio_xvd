@@ -153,9 +153,15 @@ p {
     grid-template-columns: repeat(3, 1fr);
 }
 
+.grid-65-5-30{
+    display: grid;
+    grid-template-columns: 65vw 5vw 30vw;
+}
+
 .grid-30-5-30-5-30{
     display: grid;
     grid-template-columns: 30vw 5vw 30vw 5vw 30vw;
+
 
 }
 
@@ -215,6 +221,11 @@ p {
 .grid
 
 
+.menu-item:hover{
+    color: lightcoral;
+}
+
+
 .tags{
     padding: 20px;
     display: grid;
@@ -235,7 +246,7 @@ p {
 /* media players */
 
 .theater{
-    gap: 20px
+    gap: 20px;
 }
 
 .video{

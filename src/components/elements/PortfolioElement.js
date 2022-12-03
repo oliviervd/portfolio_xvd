@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {} from "react";
 import useGoogleSheets from "use-google-sheets";
 import {
     fetchImage,
@@ -56,14 +56,20 @@ const PortfolioElement = (props) => {
                _img = fetchImage(item)
                type = fetchType(item)
 
+               //tempDB for detailed;
+               let detailDB = [];
+               detailDB.push({'vimeo': vimeo_id, "title": title,
+                   "description": description})
+
                function activateDetailViewer() {
                    // function to set state of what will be shown in the detail viewer and which one to open.
                    props.setShowWorkID(id);
-                   if (kind == "narrative content") {
+                   if (kind === "narrative content") {
                        props.setDetailNarrativeWindowOpen(true);
                        props.setDetailBrandedWindowOpen(false);
+                       props.setDetailDB(detailDB);
                    }
-                   else if (kind == "branded content") {
+                   else if (kind === "branded content") {
                        props.setDetailBrandedWindowOpen(true);
                        props.setDetailNarrativeWindowOpen(false);
                    }
@@ -87,11 +93,11 @@ const PortfolioElement = (props) => {
                                    </div>
                                }
                                <VideoViewer vimeo_id={vimeo_id}/>
-                               <img className="image_fit" src={_img}/>
+                               <img className="image_fit" alt={""} src={_img}/>
 
                                {/*if narrative content display like this*/}
 
-                               { (kind=="narrative content") &&
+                               { (kind==="narrative content") &&
                                    <div onClick={activateDetailViewer}>
                                         <p>{description}</p>
                                    </div>
@@ -99,7 +105,7 @@ const PortfolioElement = (props) => {
 
                                {/*if branded content display like this*/}
 
-                               { (kind=="branded content") &&
+                               { (kind==="branded content") &&
                                    <div onClick={activateDetailViewer}>
                                        <p>directed by: {directed_by}</p>
                                    </div>

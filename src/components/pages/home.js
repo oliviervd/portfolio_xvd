@@ -1,21 +1,24 @@
-import React, {Suspense, lazy, useState, useLayoutEffect, useRef} from "react";
-import HighlightElement from "../elements/HighlightElement";
+import React, {Suspense, lazy, useState} from "react";
 
 const Header = lazy(()=>import("../elements/header"))
 const PortfolioElement = lazy(()=> import("../elements/PortfolioElement"))
+const HighlightElement = lazy(()=> import("../elements/HighlightElement"))
 
 const Home = () => {
 
     const [showWorkID, setShowWorkID] = useState("test");
     const [detailNarrativeWindowOpen, setDetailNarrativeWindowOpen] = useState(false);
     const [detailBrandedWindowOpen, setDetailBrandedWindowOpen] = useState(false);
+    const [detailDB, setDetailDB] = useState("");
+
+    console.log(detailDB);
+
     //const mainGrid = useRef();
 
-    console.log(showWorkID, detailNarrativeWindowOpen, detailBrandedWindowOpen);
 
     return(
         <div className="full_page">
-            <div className="grid-30-5-30-5-30 full_page">
+            <div className={detailNarrativeWindowOpen?"grid-65-5-30 full_page":"grid-30-5-30-5-30 full_page"}>
                 {/* first column - highlights + header
                 todo: add map function
                 */}
@@ -26,11 +29,11 @@ const Home = () => {
                         </Suspense>
                     </div>
                     <br/>
-
-                    <div/>
                     <div className={"lineBottom lineTop"}>
                         <Suspense>
-                            <HighlightElement/>
+                            <HighlightElement setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
+                                              windowIsOpen={detailNarrativeWindowOpen} showWorkID={showWorkID}
+                                              detailDB={detailDB}/>
                         </Suspense>
                     </div>
                 </div>
@@ -38,19 +41,18 @@ const Home = () => {
                     <h2 className="text-rotate accent upper">narrative content</h2>
                 </div>
                 {/* second column - narrative
-                fix : https://stackoverflow.com/questions/34314474/css-infinite-scrolling-div
                 todo: add map function
                 */}
                 <div className={"lineV rowScroll_narrative"}>
                     <Suspense>
                         <PortfolioElement type={true} className="PortfolioElement_narrative" kind={"narrative content"}
                                           setShowWorkID = {setShowWorkID} setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
-                                          setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}/>
+                                          setDetailBrandedWindowOpen={setDetailBrandedWindowOpen} setDetailDB={setDetailDB}/>
                     </Suspense>
                     <Suspense>
                         <PortfolioElement type={true} className="PortfolioElement_narrative" kind={"narrative content"}
                                           setShowWorkID = {setShowWorkID} setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
-                                          setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}/>
+                                          setDetailBrandedWindowOpen={setDetailBrandedWindowOpen} setDetailDB={setDetailDB}/>
                     </Suspense>
                 </div>
                 <div className="lineV">

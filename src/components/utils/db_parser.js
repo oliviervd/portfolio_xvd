@@ -20,6 +20,14 @@ export function fetchHighlight(i) {
 }
 
 
+export function fetchId(i) {
+    let id;
+    if (i.id !== "") {
+        id = i.id
+    }
+    return id;
+}
+
 export function fetchType(i) {
     let type;
     if (i.type !== "") {
@@ -32,14 +40,22 @@ export function fetchType(i) {
 
 export function fetchTitle(i) {
     if (i.title !== ""){
-        return <>{i.title}</>
+        return i.title
     }
+}
+
+export function fetchTheaterMovie(i) {
+    let id;
+    if (i.theater === 'yes') {
+        id = i.vimeo
+    }
+    return id;
 }
 
 export function fetchDescription(i) {
     if (i.description !== "") {
-        return <>{i.description}</>;
-    };
+        return i.description;
+    }
 }
 
 export function fetchDirectedBy(i) {

@@ -1,12 +1,12 @@
-import React from "react";
+import React, {useState, useRef, useLayoutEffect, useEffect} from "react";
 import Vimeo from "@u-wave/react-vimeo";
 import useWindowDimensions from "../utils/getWindowDimensions";
 
 const Theater = (props) => {
 
-    const { height, width } = useWindowDimensions();
+    const { height, width} = useWindowDimensions();
     const divStyle = {
-        width: width,
+        width: width*0.65,
         height: height
     }
     return(
@@ -14,7 +14,7 @@ const Theater = (props) => {
             <Vimeo className="theater"
                    video={props.vimeo_id}
                    autoplay={true}
-                   width={width}
+                   width={width*0.65}
                    showTitle={false}
                    muted={true}
                    loop={true}
