@@ -10,11 +10,19 @@ const Home = () => {
     const [detailNarrativeWindowOpen, setDetailNarrativeWindowOpen] = useState(false);
     const [detailBrandedWindowOpen, setDetailBrandedWindowOpen] = useState(false);
     const [hideNarrative, setHideNarrative] = useState(false);
+    const [hideBranded, setHideBranded] = useState(false);
     const [detailDB, setDetailDB] = useState("");
 
     console.log(detailDB);
 
     //const mainGrid = useRef();
+
+    function initGrid() {
+        setDetailBrandedWindowOpen(false)
+        setDetailNarrativeWindowOpen(false)
+        setHideNarrative(false);
+        setHideBranded(false);
+    }
 
 
     return(
@@ -26,7 +34,7 @@ const Home = () => {
                 <div className="gridH-20-1-79 lineV" style={{overflow: "hidden"}}>
                     <div className={"lineBottom lineTop"}>
                         <Suspense>
-                            <Header/>
+                            <Header initGrid={initGrid}/>
                         </Suspense>
                     </div>
                     <br/>
@@ -40,61 +48,60 @@ const Home = () => {
                     </div>
                 </div>
 
-                {(!hideNarrative)&&
-                    <div className="lineV">
+                {(!hideNarrative) &&
+                    <div className="lineV" >
                         <h2 className="text-rotate accent upper">narrative content</h2>
                     </div>
                 }
 
 
                 {(!hideNarrative) &&
-                    <div>
-
-                        {/* second column - narrative
-                        todo: add map function
-                        */}
                         <div className={"lineV rowScroll_narrative"}>
                             <Suspense>
                                 <PortfolioElement type={true} className="PortfolioElement_narrative" kind={"narrative content"}
                                                   setShowWorkID = {setShowWorkID} setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
                                                   setDetailBrandedWindowOpen={setDetailBrandedWindowOpen} setDetailDB={setDetailDB}
-                                                  setHideNarrative={setHideNarrative}/>
+                                                  setHideNarrative={setHideNarrative} setHideBranded={setHideBranded}/>
                             </Suspense>
                             <Suspense>
                                 <PortfolioElement type={true} className="PortfolioElement_narrative" kind={"narrative content"}
                                                   setShowWorkID = {setShowWorkID} setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
                                                   setDetailBrandedWindowOpen={setDetailBrandedWindowOpen} setDetailDB={setDetailDB}
-                                                  setHideNarrative={setHideNarrative}/>
+                                                  setHideNarrative={setHideNarrative} setHideBranded={setHideBranded}/>
                             </Suspense>
                         </div>
 
-                    </div>
 
                 }
 
-                <div className="lineV">
-                    <h2 className="text-rotate accent upper">branded content</h2>
-                </div>
+                {(!hideBranded) &&
+                    <div className="lineV">
+                        <h2 className="text-rotate accent upper">branded content</h2>
+                    </div>
+                }
+
 
 
                 {/* third column - branded
                 todo: add map function
                 */}
+
+                {(!hideBranded) &&
                     <div className={"lineV rowScroll_branded"}>
                         <Suspense>
                             <PortfolioElement type={false} className="PortfolioElement_branded" kind={"branded content"}
                                               setShowWorkID = {setShowWorkID} setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}
                                               setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen} setDetailDB={setDetailDB}
-                                              setHideNarrative={setHideNarrative}/>
+                                              setHideNarrative={setHideNarrative} setHideBranded={setHideBranded}/>
                         </Suspense>
                         <Suspense>
                             <PortfolioElement type={false} className="PortfolioElement_branded" kind={"branded content"}
                                               setShowWorkID = {setShowWorkID} setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}
                                               setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen} setDetailDB={setDetailDB}
-                                              setHideNarrative={setHideNarrative}/>
+                                              setHideNarrative={setHideNarrative} setHideBranded={setHideBranded}/>
                         </Suspense>
                     </div>
-
+                }
             </div>
         </div>
     )

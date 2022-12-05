@@ -67,12 +67,14 @@ const PortfolioElement = (props) => {
                    if (kind === "narrative content") {
                        props.setDetailNarrativeWindowOpen(true);
                        props.setDetailBrandedWindowOpen(false);
+                       props.setHideBranded(true);
                        props.setHideNarrative(false);
                        props.setDetailDB(detailDB);
                    }
                    else if (kind === "branded content") {
                        props.setDetailNarrativeWindowOpen(true);
                        props.setHideNarrative(true);
+                       props.setHideBranded(false);
                        props.setDetailDB(detailDB);
                    }
                }

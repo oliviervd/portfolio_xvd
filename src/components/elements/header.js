@@ -2,14 +2,14 @@ import React from "react";
 import Menu from "./menu";
 import {Link} from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
     return(
         <div>
             <div className="line-bottom">
                 <div>
-                    <Link className="menu-item" to={"../"}>
+                    <div className="menu-item"  onClick={props.initGrid}>
                         <h1 className="upper accent">Xavier Van D'huynslager</h1>
-                    </Link>
+                    </div>
                     <p>
                         Xavier Van D'huynslager is a freelance Director of Photography based in Ghent, Belgium.
                         -Available for global hire.- www.xaviervandhuynslager.be +32 (0) 496 70 36 47
