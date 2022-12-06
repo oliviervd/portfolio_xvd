@@ -38,7 +38,7 @@ const Home = () => {
                         </Suspense>
                     </div>
                     <br/>
-                    <div className={"lineBottom lineTop"}>
+                    <div className={"lineBottom lineTop scroller"}>
                         <Suspense>
                             <HighlightElement setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
                                               setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}
