@@ -39,7 +39,7 @@ const Home = () => {
                         </Suspense>
                     </div>
                     <br/>
-                    <div className={detailNarrativeWindowOpen?"lineBottom lineTop":"lineBottom lineTop scroller"}>
+                    <div className={detailNarrativeWindowOpen?"lineBottom lineTop":"lineBottom lineTop"}>
                         <Suspense>
                             <HighlightElement setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
                                               setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}
@@ -59,7 +59,7 @@ const Home = () => {
 
 
                 {(!hideNarrative) &&
-                        <div className={"lineV rowScroll_narrative scroller"}>
+                        <div className={"lineV rowScroll_narrative"}>
                             <Suspense>
                                 <PortfolioElement type={true} className="PortfolioElement_narrative" kind={"narrative content"}
                                                   setShowWorkID = {setShowWorkID} setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
