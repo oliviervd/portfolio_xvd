@@ -159,8 +159,14 @@ p {
     background: black;
     color: white;
     height: 40px;
+    width: 10vh;
     left: -0px;
     overflow: auto;
+}
+
+.typeLabel{
+    font-weight: lighter;
+    font-style: italic;
 }
 
 .grid-1-19{

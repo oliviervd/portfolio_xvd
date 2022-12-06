@@ -59,7 +59,7 @@ const Home = () => {
 
 
                 {(!hideNarrative) &&
-                        <div className={"lineV rowScroll_narrative"}>
+                        <div className={"lineV rowScroll_narrative scroller"}>
                             <Suspense>
                                 <PortfolioElement type={true} className="PortfolioElement_narrative" kind={"narrative content"}
                                                   setShowWorkID = {setShowWorkID} setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
@@ -90,7 +90,7 @@ const Home = () => {
                 */}
 
                 {(!hideBranded) &&
-                    <div className={"lineV rowScroll_branded"}>
+                    <div className={"lineV rowScroll_branded scrollerB"}>
                         <Suspense>
                             <PortfolioElement type={false} className="PortfolioElement_branded" kind={"branded content"}
                                               setShowWorkID = {setShowWorkID} setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}

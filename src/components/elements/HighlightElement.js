@@ -32,8 +32,8 @@ const HighlightElement = (props) => {
                     <div className={"gridH-1-19"}>
                         <div className={"grid-9-1"}>
                             <div className={"grid-3-4-3"}>
-                                <div>
-                                    <p className={"typeBox"} style={{width:"20%", marginLeft:30, marginTop: 10}}>{type}</p>
+                                <div style={{width: '10vw'}}>
+                                    <p className={""} >{type}</p>
                                 </div>
                                 <h2 className={"upper"}>{title}</h2>
                                 <div>
