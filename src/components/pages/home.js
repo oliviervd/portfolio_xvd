@@ -13,7 +13,7 @@ const Home = () => {
     const [hideBranded, setHideBranded] = useState(false);
     const [detailDB, setDetailDB] = useState("");
 
-    console.log(detailDB);
+    console.log(showWorkID);
 
     //const mainGrid = useRef();
 
@@ -43,7 +43,8 @@ const Home = () => {
                             <HighlightElement setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
                                               setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}
                                               windowIsOpen={detailNarrativeWindowOpen} showWorkID={showWorkID}
-                                              detailDB={detailDB} initGrid={initGrid}/>
+                                              detailDB={detailDB} initGrid={initGrid} setShowWorkID={setShowWorkID}
+                                              setHideBranded={setHideBranded} setHideNarrative={setHideNarrative}/>
                         </Suspense>
                     </div>
                 </div>
