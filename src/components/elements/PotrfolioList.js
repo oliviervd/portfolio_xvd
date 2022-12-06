@@ -55,12 +55,12 @@ const PortfolioList = (props) => {
                 return(
                     <div className={"grid-9-1 lineBottom scroller"}>
                         <div className={"grid-3-4-3"}>
-                            <p>{_type}</p>
-                            <p>{_title}</p>
-                            <p>{_year}</p>
+                            <p className={"smaller accent"}>{_type}</p>
+                            <p className={"bolder"}>{_title}</p>
+                            <p className={"smaller accent"}>{_year}</p>
                         </div>
                         <div>
-                            <p onClick={activateDetailViewer}>read more</p>
+                            <p className={"smaller accent link"} onClick={activateDetailViewer}>read more</p>
                         </div>
                     </div>
                     )
