@@ -84,16 +84,25 @@ const PortfolioElement = (props) => {
                        <div>
                            <div>
                                {props.type &&
-                                   <div className={"grid-1-19"}>
+                                   <div className={"grid-1-15-4"}>
                                        <p  className={"text-rotate upper typeBox"}>{type}</p>
                                        <div onClick={activateDetailViewer}>
                                            <h1 className="accent upper">{title}</h1>
                                        </div>
+                                       <div onClick={activateDetailViewer}>
+                                           <p className={"link"}>read more</p>
+                                       </div>
                                    </div>
                                }
                                {!props.type &&
-                                   <div onClick={activateDetailViewer}>
-                                       <h1 className="accent upper">{title}</h1>
+                                   <div className={"grid-1-15-4"}>
+                                       <div/>
+                                       <div onClick={activateDetailViewer}>
+                                           <h1 className="accent upper">{title}</h1>
+                                       </div>
+                                       <div onClick={activateDetailViewer}>
+                                           <p className={"link"}>read more</p>
+                                       </div>
                                    </div>
                                }
                                <VideoViewer vimeo_id={vimeo_id}/>

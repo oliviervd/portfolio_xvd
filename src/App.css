@@ -56,8 +56,15 @@ p {
     margin: 20px;
 }
 
-.uppercase{
+.link {
+    text-decoration: underline;
+}
+.link:hover{
+    color: crimson;
+}
 
+.uppercase{
+    text-transform: uppercase;
 }
 
 .accent{
@@ -147,6 +154,11 @@ p {
 .grid-1-19{
     display: grid;
     grid-template-columns: 10% 90%;
+}
+
+.grid-1-15-4{
+    display: grid;
+    grid-template-columns: 1fr 15fr 4fr;
 }
 
 .grid-3-3-3{
