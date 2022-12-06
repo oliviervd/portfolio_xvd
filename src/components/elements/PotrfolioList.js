@@ -1,6 +1,6 @@
 import React from "react"
 import useGoogleSheets from "use-google-sheets";
-import {fetchID, fetchTitle, fetchType, fetchYear} from "../utils/db_parser";
+import {fetchDescription, fetchID, fetchTitle, fetchType, fetchVimeo, fetchYear} from "../utils/db_parser";
 
 const PortfolioList = (props) => {
 
@@ -33,19 +33,22 @@ const PortfolioList = (props) => {
                 let _type = fetchType(item);
                 let _id = fetchID(item)
                 let _kind = item.kind;
+                let _vimeo_id = fetchVimeo(item);
+                let _description = fetchDescription(item);
+
+                let _detailDB = [];
+                _detailDB.push({'vimeo': _vimeo_id, "title": _title,
+                    "description": _description, "type": _type, "year": _year})
 
                 function activateDetailViewer() {
                     props.setShowWorkID(_id);
                     if (_kind === "narrative content") {
                         props.setDetailNarrativeWindowOpen(true);
-                        props.setDetailBrandedWindowOpen(false);
-                        props.setHideBranded(true)
-                        props.setHideNarrative(false)
+                        props.setDetailDB(_detailDB);
                     }
                     if (_kind === "branded content") {
                         props.setDetailNarrativeWindowOpen(true)
-                        props.setHideBranded(false)
-                        props.setHideNarrative(true)
+                        props.setDetailDB(_detailDB);
                     }
                 }
 

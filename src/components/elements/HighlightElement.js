@@ -24,7 +24,7 @@ const HighlightElement = (props) => {
                     <PortfolioList initGrid={props.initGrid} setShowWorkID={props.setShowWorkID}
                                    setDetailNarrativeWindowOpen={props.setDetailNarrativeWindowOpen}
                                    setDetailBrandedWindowOpen={props.setDetailBrandedWindowOpen}
-                                   setHideBranded={props.setHideBranded}/>
+                                   setHideBranded={props.setHideBranded} setDetailDB={props.setDetailDB}/>
                 </div>
             }
             {props.windowIsOpen &&

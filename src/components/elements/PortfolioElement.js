@@ -52,7 +52,7 @@ const PortfolioElement = (props) => {
                description = fetchDescription(item) // description of the project
                directed_by = fetchDirectedBy(item);
                vimeo_id = fetchVimeo(item); // id to fetch vimeo video
-               sort = props.kind; // feauture, short, ...
+               sort = props.kind; // feature, short, ...
                kind = item.kind; //branded content or narrative content
                _img = fetchImage(item)
                type = fetchType(item)
