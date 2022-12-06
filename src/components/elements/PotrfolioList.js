@@ -49,6 +49,7 @@ const PortfolioList = (props) => {
                     if (_kind === "branded content") {
                         props.setDetailNarrativeWindowOpen(true)
                         props.setDetailDB(_detailDB);
+                        props.setHideBranded(true);
                     }
                 }
 
