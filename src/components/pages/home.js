@@ -43,7 +43,7 @@ const Home = () => {
                             <HighlightElement setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
                                               setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}
                                               windowIsOpen={detailNarrativeWindowOpen} showWorkID={showWorkID}
-                                              detailDB={detailDB}/>
+                                              detailDB={detailDB} initGrid={initGrid}/>
                         </Suspense>
                     </div>
                 </div>

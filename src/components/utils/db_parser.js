@@ -13,6 +13,14 @@ export function fetchVimeo(i) {
     return vimeo
 }
 
+export function fetchYear(i) {
+    let year;
+    if (i.year !== "") {
+        year = i.year
+    }
+    return year;
+}
+
 export function fetchHighlight(i) {
     let highlight;
     highlight = i.highlight === "YES";

@@ -7,6 +7,7 @@ import {
     fetchDirectedBy,
     fetchTitle,
     fetchID,
+    fetchYear,
     fetchType
 } from "../utils/db_parser";
 import VideoViewer from "./videoViewer";
@@ -45,7 +46,7 @@ const PortfolioElement = (props) => {
     return (
        <div>
            {_portfolio.map((item => {
-               let description, title, directed_by, vimeo_id, sort, kind, _img, type, id;
+               let description, title, directed_by, vimeo_id, sort, kind, _img, type, id, year;
                id = fetchID(item); // id of the project (Database).
                title = fetchTitle(item); // title of the project
                description = fetchDescription(item) // description of the project
@@ -55,11 +56,12 @@ const PortfolioElement = (props) => {
                kind = item.kind; //branded content or narrative content
                _img = fetchImage(item)
                type = fetchType(item)
+               year = fetchYear(item)
 
                //tempDB for detailed;
                let detailDB = [];
                detailDB.push({'vimeo': vimeo_id, "title": title,
-                   "description": description})
+                   "description": description, "type": type, "year": year})
 
                function activateDetailViewer() {
                    // function to set state of what will be shown in the detail viewer and which one to open.

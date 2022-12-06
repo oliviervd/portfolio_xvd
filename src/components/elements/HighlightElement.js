@@ -1,24 +1,62 @@
 import React, {lazy, Suspense, useState} from "react";
 
 const Theater = lazy(()=>import("./theater"))
+const PortfolioList = lazy(()=> import("../elements/PotrfolioList"))
+
 
 const HighlightElement = (props) => {
 
-    let vimeoID;
+    let vimeoID, title, description, year, type;
 
     if (props.windowIsOpen) {
-        vimeoID = props.detailDB[0].vimeo
+        vimeoID = props.detailDB[0].vimeo;
+        title = props.detailDB[0].title;
+        description = props.detailDB[0].description;
+        year = props.detailDB[0].year;
+        type = props.detailDB[0].type;
     }
 
 
     return(
         <div>
+            {!props.windowIsOpen &&
+                <div>
+                    <PortfolioList/>
+                </div>
+            }
             {props.windowIsOpen &&
                 <div>
-                    <Suspense>
-                        <Theater vimeo_id={vimeoID}/>
-                    </Suspense>
-                    <button onClick={()=>props.setDetailNarrativeWindowOpen(false)}>close</button>
+                    <div className={"gridH-1-19"}>
+                        <div className={"grid-9-1"}>
+                            <div className={"grid-3-4-3"}>
+                                <div>
+                                    <p className={"typeBox"} style={{width:"20%", marginLeft:30, marginTop: 10}}>{type}</p>
+                                </div>
+                                <h2 className={"upper"}>{title}</h2>
+                                <div>
+                                    <p>{year}</p>
+                                </div>
+                            </div>
+                            <p className={"link"} onClick={props.initGrid}>close</p>
+                        </div>
+                        <div>
+                            <Suspense>
+                                <Theater vimeo_id={vimeoID}/>
+                            </Suspense>
+                            <div className={"lineBottom"}></div>
+                        </div>
+                    </div>
+                    {/* description box (if needed todo: check with xavier)
+                    <div className={"grid-7-3"}>
+                        <div>
+                            <p>{description}</p>
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                    */}
+
                 </div>
             }
         </div>
