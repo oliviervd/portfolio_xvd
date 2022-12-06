@@ -92,7 +92,7 @@ const PortfolioElement = (props) => {
                                            <h1 className="accent upper">{title}</h1>
                                        </div>
                                        <div onClick={activateDetailViewer}>
-                                           <p className={"link"}>read more</p>
+                                           <p className={"link accent"}>read more</p>
                                        </div>
                                    </div>
                                }
@@ -103,7 +103,7 @@ const PortfolioElement = (props) => {
                                            <h1 className="accent upper">{title}</h1>
                                        </div>
                                        <div onClick={activateDetailViewer}>
-                                           <p className={"link"}>read more</p>
+                                           <p className={"link accent"}>read more</p>
                                        </div>
                                    </div>
                                }
