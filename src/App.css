@@ -18,11 +18,6 @@ body{
 }
 
 @font-face {
-    font-family: "KWBio27-Display";
-    src: local("KWBio27-Display"), url("fonts/KWBio27-Display.otf");
-}
-
-@font-face {
     font-family: "libertinage";
     src: local("libertinage"), url("fonts/Libertinage.ttf");
 }
@@ -32,29 +27,40 @@ body{
     src: local("Ume"), url("fonts/Ume-P-Gothic_Balsa.ttf");
 }
 
+@font-face {
+    font-family: "OrbikularTRIAL-Light";
+    src: local("OrbikularTRIAL-Light"), url("fonts/OrbikularTRIAL-Light.otf")
+}
+
 h1 {
-    font-family: "Ume", sans-serif;
+    font-family: "OrbikularTRIAL-Light", sans-serif;
     font-size: 2rem;
     margin: 1rem;
     font-weight: initial;
 }
 
 h2{
-    font-family: "Ume", sans-serif;
+    font-family: "OrbikularTRIAL-Light", sans-serif;
     font-size: 1.5rem;
     margin: 20px;
     font-weight: initial;
 }
 
 h3{
-    font-family: "Ume", sans-serif;
+    font-family: "OrbikularTRIAL-Light", sans-serif;
     font-size: 1.2rem;
     margin: 20px;
     font-weight: initial;
 }
 
+
+.accent{
+    font-family: "OrbikularTRIAL-Light", sans-serif;
+    font-weight: bolder;
+}
+
 p {
-    font-family: "Ume", sans-serif;
+    font-family: "OrbikularTRIAL-Light", sans-serif;
     font-size: 1rem;
     margin: 20px;
     font-weight: lighter;
@@ -85,10 +91,6 @@ a:hover{
 
 .uppercase{
     text-transform: uppercase;
-}
-
-.accent{
-    font-family: "libertinage", sans-serif;
 }
 
 .italic{
@@ -140,8 +142,8 @@ a:hover{
     width: 100%;
 }
 
-.lineV {
-    border-right: black dotted 1px;
+.lineV{
+
 }
 
 .blackbox{

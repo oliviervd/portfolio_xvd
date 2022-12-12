@@ -33,7 +33,7 @@ const Home = () => {
                 todo: add map function
                 */}
                 <div className="gridH-20-1-79" style={{overflow: "hidden"}}>
-                    <div className={"lineBottom"}>
+                    <div className={"lineV lineBottom"}>
                         <Suspense>
                             <Header initGrid={initGrid}/>
                         </Suspense>
@@ -52,14 +52,14 @@ const Home = () => {
                 </div>
 
                 {(!hideNarrative) &&
-                    <div className="" >
+                    <div className="lineV" >
                         <h2 className="text-rotate accent upper">narrative content</h2>
                     </div>
                 }
 
 
                 {(!hideNarrative) &&
-                        <div className={" scroller"}>
+                        <div className={"lineV scroller"}>
                             <Suspense>
                                 <PortfolioElement type={true} className="PortfolioElement_narrative" kind={"narrative content"}
                                                   setShowWorkID = {setShowWorkID} setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
@@ -78,7 +78,7 @@ const Home = () => {
                 }
 
                 {(!hideBranded) &&
-                    <div className="">
+                    <div className="lineV">
                         <h2 className="text-rotate accent upper">branded content</h2>
                     </div>
                 }
