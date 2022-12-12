@@ -32,14 +32,14 @@ const Home = () => {
                 {/* first column - highlights + header
                 todo: add map function
                 */}
-                <div className="gridH-20-1-79 lineV" style={{overflow: "hidden"}}>
-                    <div className={"lineBottom lineTop"}>
+                <div className="gridH-20-1-79" style={{overflow: "hidden"}}>
+                    <div className={"lineBottom"}>
                         <Suspense>
                             <Header initGrid={initGrid}/>
                         </Suspense>
                     </div>
                     <br/>
-                    <div className={detailNarrativeWindowOpen?"lineBottom lineTop":"lineBottom lineTop scroller"}>
+                    <div className={detailNarrativeWindowOpen?"lineBottom":"lineBottom lineTop scroller"}>
                         <Suspense>
                             <HighlightElement setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
                                               setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}
@@ -52,14 +52,14 @@ const Home = () => {
                 </div>
 
                 {(!hideNarrative) &&
-                    <div className="lineV" >
+                    <div className="" >
                         <h2 className="text-rotate accent upper">narrative content</h2>
                     </div>
                 }
 
 
                 {(!hideNarrative) &&
-                        <div className={"lineV scroller"}>
+                        <div className={" scroller"}>
                             <Suspense>
                                 <PortfolioElement type={true} className="PortfolioElement_narrative" kind={"narrative content"}
                                                   setShowWorkID = {setShowWorkID} setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
@@ -78,7 +78,7 @@ const Home = () => {
                 }
 
                 {(!hideBranded) &&
-                    <div className="lineV">
+                    <div className="">
                         <h2 className="text-rotate accent upper">branded content</h2>
                     </div>
                 }
