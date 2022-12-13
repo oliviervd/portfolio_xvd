@@ -6,6 +6,8 @@ const PortfolioList = lazy(()=> import("../elements/PotrfolioList"))
 
 const HighlightElement = (props) => {
 
+    const [hideDescription, setHideDescription] = useState(false);
+
     let vimeoID, title, description, year, type;
 
     if (props.windowIsOpen) {
@@ -36,15 +38,23 @@ const HighlightElement = (props) => {
                                     <div>
                                         <p className={""} >{type}</p>
                                     </div>
-                                    <h2 className={"upper"}>{title}</h2>
+                                    <h2 className={"upper"} style={{color:"pink"}}>{title}</h2>
                                     <div>
                                         <p>{year}</p>
                                     </div>
                                 </div>
-                                <p className={"link"} onClick={props.initGrid}>close</p>
+                                <div className={"grid_even--3"}>
+                                    <p  className={"link"} onClick={()=> setHideDescription(!hideDescription)}>↧description</p>
+                                    <div></div>
+                                    <p className={"link"} onClick={props.initGrid}>⤫close</p>
+                                </div>
                             </div>
                             <div>
-                                <p>{description}</p>
+                                {hideDescription &&
+                                    <div>
+                                        <p>{description}</p>
+                                    </div>
+                                }
                             </div>
                         </div>
                         <div>
