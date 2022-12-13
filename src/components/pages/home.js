@@ -42,7 +42,7 @@ const Home = () => {
                     <Suspense>
                         <Header showBio={false}/>
                     </Suspense>
-                    <h3>this mobile application is currently under construction, please refer to the browser in the meantime.</h3>
+                    <h3>mobile support of the website is currently under construction, please refer to the browser in the meantime.</h3>
                 </div>
             }
             {isDesktopOrLaptop &&
