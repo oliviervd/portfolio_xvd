@@ -92,13 +92,13 @@ const Home = () => {
                 {(!hideBranded) &&
                     <div className={"lineV scroller"}>
                         <Suspense>
-                            <PortfolioElement type={false} className="PortfolioElement_branded" kind={"branded content"}
+                            <PortfolioElement type={true} className="PortfolioElement_branded" kind={"branded content"}
                                               setShowWorkID = {setShowWorkID} setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}
                                               setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen} setDetailDB={setDetailDB}
                                               setHideNarrative={setHideNarrative} setHideBranded={setHideBranded}/>
                         </Suspense>
                         <Suspense>
-                            <PortfolioElement type={false} className="PortfolioElement_branded" kind={"branded content"}
+                            <PortfolioElement type={true} className="PortfolioElement_branded" kind={"branded content"}
                                               setShowWorkID = {setShowWorkID} setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}
                                               setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen} setDetailDB={setDetailDB}
                                               setHideNarrative={setHideNarrative} setHideBranded={setHideBranded}/>

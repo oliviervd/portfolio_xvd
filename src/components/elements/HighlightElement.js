@@ -30,17 +30,22 @@ const HighlightElement = (props) => {
             {props.windowIsOpen &&
                 <div>
                     <div className={"gridH-1-19"}>
-                        <div className={"grid-9-1"}>
-                            <div className={"grid-3-4-3"}>
-                                <div>
-                                    <p className={""} >{type}</p>
+                        <div>
+                            <div className={"grid-9-1"}>
+                                <div className={"grid-3-4-3"}>
+                                    <div>
+                                        <p className={""} >{type}</p>
+                                    </div>
+                                    <h2 className={"upper"}>{title}</h2>
+                                    <div>
+                                        <p>{year}</p>
+                                    </div>
                                 </div>
-                                <h2 className={"upper"}>{title}</h2>
-                                <div>
-                                    <p>{year}</p>
-                                </div>
+                                <p className={"link"} onClick={props.initGrid}>close</p>
                             </div>
-                            <p className={"link"} onClick={props.initGrid}>close</p>
+                            <div>
+                                <p>{description}</p>
+                            </div>
                         </div>
                         <div>
                             <Suspense>
