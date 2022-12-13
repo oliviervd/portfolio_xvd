@@ -39,7 +39,10 @@ const Home = () => {
         <div>
             {isTabletOrMobile &&
                 <div>
-                    <p>under construction</p>
+                    <Suspense>
+                        <Header showBio={false}/>
+                    </Suspense>
+                    <h3>this mobile application is currently under construction, please refer to the browser in the meantime.</h3>
                 </div>
             }
             {isDesktopOrLaptop &&
@@ -51,7 +54,7 @@ const Home = () => {
                         <div className="gridH-20-1-79" style={{overflow: "hidden"}}>
                             <div className={"lineV lineBottom"}>
                                 <Suspense>
-                                    <Header initGrid={initGrid}/>
+                                    <Header initGrid={initGrid} showBio={true}/>
                                 </Suspense>
                             </div>
                             <br/>

@@ -11,7 +11,9 @@ const Header = (props) => {
                 <div>
                     <div className="menu-item" onClick={props.initGrid}>
                         <h1 className="upper accent">Xavier Van D'huynslager</h1>
-                        <p>Xavier Van D'huynslager is a freelance Director of Photography based in Ghent, Belgium. -Available for global hire.</p>
+                        {props.showBio &&
+                            <p>Xavier Van D'huynslager is a freelance Director of Photography based in Ghent, Belgium. -Available for global hire.</p>
+                        }
                     </div>
                     {/*
                     <div>
