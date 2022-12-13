@@ -163,6 +163,12 @@ a:hover{
 
 /* layout */
 
+@media only screen and (min-width: 1224px) {
+    .header {
+        height: 25vh
+    }
+}
+
 .center {
     display: box;
     margin-left: auto;
@@ -264,9 +270,19 @@ a:hover{
     grid-template-columns: repeat(4, 1fr);
 }
 
+.gridH-4-1{
+    display: grid;
+    grid-template-rows: 4fr 1fr;
+}
+
 .gridH-20-1-79{
     display: grid;
     grid-template-rows: 20vh 1vh 79vh;
+}
+
+.gridH-25-1-74 {
+    display: grid;
+    grid-template-rows: 2.5fr 0.1fr 7.4fr;
 }
 
 .portfolio-container{

@@ -40,7 +40,7 @@ const Home = () => {
             {isTabletOrMobile &&
                 <div>
                     <Suspense>
-                        <Header showBio={false}/>
+                        <Header showBio={false} hamburger={true}/>
                     </Suspense>
                     <h3>mobile support of the website is currently under construction, please refer to the browser in the meantime.</h3>
                 </div>
@@ -51,10 +51,10 @@ const Home = () => {
                         {/* first column - highlights + header
                 todo: add map function
                 */}
-                        <div className="gridH-20-1-79" style={{overflow: "hidden"}}>
+                        <div className="gridH-25-1-74" style={{overflow: "hidden"}}>
                             <div className={"lineV lineBottom"}>
                                 <Suspense>
-                                    <Header initGrid={initGrid} showBio={true}/>
+                                    <Header initGrid={initGrid} showBio={true} hamburger={false}/>
                                 </Suspense>
                             </div>
                             <br/>
@@ -85,12 +85,6 @@ const Home = () => {
                                                       setDetailBrandedWindowOpen={setDetailBrandedWindowOpen} setDetailDB={setDetailDB}
                                                       setHideNarrative={setHideNarrative} setHideBranded={setHideBranded}/>
                                 </Suspense>
-                                <Suspense>
-                                    <PortfolioElement type={true} className="PortfolioElement_narrative" kind={"narrative content"}
-                                                      setShowWorkID = {setShowWorkID} setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
-                                                      setDetailBrandedWindowOpen={setDetailBrandedWindowOpen} setDetailDB={setDetailDB}
-                                                      setHideNarrative={setHideNarrative} setHideBranded={setHideBranded}/>
-                                </Suspense>
                             </div>
 
 
@@ -110,12 +104,6 @@ const Home = () => {
 
                         {(!hideBranded) &&
                             <div className={"lineV scroller"}>
-                                <Suspense>
-                                    <PortfolioElement type={true} className="PortfolioElement_branded" kind={"branded content"}
-                                                      setShowWorkID = {setShowWorkID} setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}
-                                                      setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen} setDetailDB={setDetailDB}
-                                                      setHideNarrative={setHideNarrative} setHideBranded={setHideBranded}/>
-                                </Suspense>
                                 <Suspense>
                                     <PortfolioElement type={true} className="PortfolioElement_branded" kind={"branded content"}
                                                       setShowWorkID = {setShowWorkID} setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}
