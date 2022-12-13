@@ -39,6 +39,10 @@ h1 {
     font-weight: initial;
 }
 
+h1:hover {
+    color: pink;
+;}
+
 h2{
     font-family: "Orbikular-Light", sans-serif;
     font-size: 1.5rem;

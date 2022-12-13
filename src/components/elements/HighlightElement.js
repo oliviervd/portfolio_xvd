@@ -18,6 +18,14 @@ const HighlightElement = (props) => {
         type = props.detailDB[0].type;
     }
 
+    let i = 0, ps = document.getElementsByTagName("p");
+    let len
+    for(len = ps.length; i<len; i++)
+    {
+        let p = ps[i];
+        p.innerHTML = p.innerHTML.replace(/\b([A-Z]{2,})\b/g, "<b>$1</b>");
+    }
+
 
     return(
         <div>
