@@ -18,11 +18,6 @@ body{
 }
 
 @font-face {
-    font-family: "KWBio27-Display";
-    src: local("KWBio27-Display"), url("fonts/KWBio27-Display.otf");
-}
-
-@font-face {
     font-family: "libertinage";
     src: local("libertinage"), url("fonts/Libertinage.ttf");
 }
@@ -32,33 +27,54 @@ body{
     src: local("Ume"), url("fonts/Ume-P-Gothic_Balsa.ttf");
 }
 
+@font-face {
+    font-family: "Orbikular-Light";
+    src: local("Orbikular-Light"), url("fonts/Orbikular-Light.otf")
+}
+
 h1 {
-    font-family: "Ume", sans-serif;
+    font-family: "Orbikular-Light", sans-serif;
     font-size: 2rem;
     margin: 1rem;
     font-weight: initial;
 }
 
 h2{
-    font-family: "Ume", sans-serif;
+    font-family: "Orbikular-Light", sans-serif;
     font-size: 1.5rem;
     margin: 20px;
     font-weight: initial;
 }
 
 h3{
-    font-family: "Ume", sans-serif;
+    font-family: "Orbikular-Light", sans-serif;
     font-size: 1.2rem;
     margin: 20px;
     font-weight: initial;
 }
 
+
+.accent{
+    font-family: "Orbikular-Light", sans-serif;
+    font-weight: bolder;
+}
+
 p {
-    font-family: "Ume", sans-serif;
+    font-family: "Orbikular-Light", sans-serif;
     font-size: 1rem;
     margin: 20px;
     font-weight: lighter;
+}
 
+a {
+    text-decoration: none;
+    color: black;
+    display: box;
+    margin-left: auto;
+    margin-right: auto;
+}
+a:hover{
+    color:crimson;
 }
 
 .smaller{
@@ -70,14 +86,11 @@ p {
 }
 .link:hover{
     color: crimson;
+    cursor: pointer;
 }
 
 .uppercase{
     text-transform: uppercase;
-}
-
-.accent{
-    font-family: "libertinage", sans-serif;
 }
 
 .italic{
@@ -129,8 +142,8 @@ p {
     width: 100%;
 }
 
-.lineV {
-    border-right: black dotted 1px;
+.lineV{
+
 }
 
 .blackbox{
@@ -145,6 +158,12 @@ p {
 }
 
 /* layout */
+
+.center {
+    display: box;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .H_margin-20p {
     margin-left: 20%;
@@ -177,6 +196,11 @@ p {
 .grid-1-19{
     display: grid;
     grid-template-columns: 10% 90%;
+}
+
+.grid-5-1-4{
+    display: grid;
+    grid-template-columns: 5fr 1fr 4fr;
 }
 
 .grid-1-15-4{
@@ -229,6 +253,11 @@ p {
 .grid_even--3{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+}
+
+.grid_even--4{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .gridH-20-1-79{

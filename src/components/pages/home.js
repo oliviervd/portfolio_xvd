@@ -32,14 +32,14 @@ const Home = () => {
                 {/* first column - highlights + header
                 todo: add map function
                 */}
-                <div className="gridH-20-1-79 lineV" style={{overflow: "hidden"}}>
-                    <div className={"lineBottom lineTop"}>
+                <div className="gridH-20-1-79" style={{overflow: "hidden"}}>
+                    <div className={"lineV lineBottom"}>
                         <Suspense>
                             <Header initGrid={initGrid}/>
                         </Suspense>
                     </div>
                     <br/>
-                    <div className={detailNarrativeWindowOpen?"lineBottom lineTop":"lineBottom lineTop scroller"}>
+                    <div className={detailNarrativeWindowOpen?"lineBottom":"lineBottom lineTop scroller"}>
                         <Suspense>
                             <HighlightElement setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
                                               setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}
