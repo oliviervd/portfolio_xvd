@@ -27,13 +27,13 @@ const Header = (props) => {
                             <a href={"mailto:xavier.vandhuynslager@hotmail.com"}>
                                 <SlEnvolope className={"center"}/>
                             </a>
-                            <a href={"https://www.instagram.com/xaviervandhuynslager/"}>
+                            <a href={"https://www.instagram.com/xaviervandhuynslager/"} target="_blank">
                                 <SlSocialInstagram className={"center"}/>
                             </a>
-                            <a href={"https://www.linkedin.com/in/xavier-van-d-huynslager-bb1b27103/"}>
+                            <a href={"https://www.linkedin.com/in/xavier-van-d-huynslager-bb1b27103/"} target="_blank">
                                 <SlSocialLinkedin className={"center"}/>
                             </a>
-                            <a href={"https://www.imdb.com/name/nm5851865/"}>
+                            <a href={"https://www.imdb.com/name/nm5851865/"} target="_blank">
                                 <SiImdb className={"center"}/>
                             </a>
                         </div>
