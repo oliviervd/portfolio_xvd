@@ -19,17 +19,17 @@ body{
 
 @font-face {
     font-family: "libertinage";
-    src: local("libertinage"), url("fonts/Libertinage.ttf");
+    src: local("libertinage"), url("../fonts/Libertinage.ttf");
 }
 
 @font-face {
     font-family: "Ume";
-    src: local("Ume"), url("fonts/Ume-P-Gothic_Balsa.ttf");
+    src: local("Ume"), url("../fonts/Ume-P-Gothic_Balsa.ttf");
 }
 
 @font-face {
     font-family: "Orbikular-Light";
-    src: local("Orbikular-Light"), url("fonts/Orbikular-Light.otf")
+    src: local("Orbikular-Light"), url("../fonts/Orbikular-Light.otf")
 }
 
 h1 {
