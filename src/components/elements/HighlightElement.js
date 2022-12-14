@@ -72,17 +72,6 @@ const HighlightElement = (props) => {
                             <div className={"lineBottom"}></div>
                         </div>
                     </div>
-                    {/* description box (if needed todo: check with xavier)
-                    <div className={"grid-7-3"}>
-                        <div>
-                            <p>{description}</p>
-                        </div>
-                        <div>
-
-                        </div>
-                    </div>
-                    */}
-
                 </div>
             }
         </div>

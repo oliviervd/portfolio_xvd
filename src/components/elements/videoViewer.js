@@ -4,7 +4,6 @@ import useWindowDimensions from "../utils/getWindowDimensions";
 
 const VideoViewer = (props) => {
 
-    //todo: add placeholder if no Vimeo.
     const {width, height} = useWindowDimensions();
     const scale = props.scale;
     let videoViewer;

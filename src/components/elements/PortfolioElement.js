@@ -8,12 +8,16 @@ import {
     fetchTitle,
     fetchID,
     fetchYear,
-    fetchType
+    fetchType,
 } from "../utils/db_parser";
+import FetchData from "../utils/fetchData";
 import VideoViewer from "./videoViewer";
 
 const PortfolioElement = (props) => {
 
+    // fetch data from google spreadsheet
+    // todo: hide API key
+    // todo: make local function in utils for this
     const {data, loading, error } = useGoogleSheets({
         apiKey: "AIzaSyCqIBCTia_C6CvAAixtiost-E3hicp7nl4",
         sheetId: "1Npm-xqwwadyHybkXHUE7imeuh3PjsQn83Hdfaw0epc0",
@@ -34,14 +38,6 @@ const PortfolioElement = (props) => {
             _portfolio.push(l);
         })
     })
-
-    let i = 0, ps = document.getElementsByTagName("p");
-    let len
-    for(len = ps.length; i<len; i++)
-    {
-        let p = ps[i];
-        p.innerHTML = p.innerHTML.replace(/\b([A-Z]{2,})\b/g, "<b>$1</b>");
-    }
 
     return (
        <div>
@@ -67,11 +63,11 @@ const PortfolioElement = (props) => {
                    // function to set state of what will be shown in the detail viewer and which one to open.
                    props.setShowWorkID(id);
                    if (kind === "narrative content") {
-                       props.setDetailNarrativeWindowOpen(true);
-                       props.setDetailBrandedWindowOpen(false);
-                       props.setHideBranded(true);
-                       props.setHideNarrative(false);
-                       props.setDetailDB(detailDB);
+                       props.setDetailNarrativeWindowOpen(true); // set detail pane open
+                       // props.setDetailBrandedWindowOpen(false); //todo: check maybe not used
+                       props.setHideBranded(true); // hide branded pane
+                       props.setHideNarrative(false); // hide narrative pane
+                       props.setDetailDB(detailDB); //populate temp db for detail pane
                    }
                    else if (kind === "branded content") {
                        props.setDetailNarrativeWindowOpen(true);
@@ -82,6 +78,16 @@ const PortfolioElement = (props) => {
                }
 
                if (kind.trim() === sort.trim()) {
+
+                   // function to set UPPERCASE in bold when tag is p. -- used for credit list.
+                   let i = 0, ps = document.getElementsByTagName("p");
+                   let len
+                   for(len = ps.length; i<len; i++)
+                   {
+                       let p = ps[i];
+                       p.innerHTML = p.innerHTML.replace(/\b([A-Z]{2,})\b/g, "<b>$1</b>");
+                   }
+
                    return(
                        <div>
                            <div>
@@ -114,7 +120,7 @@ const PortfolioElement = (props) => {
 
                                { (kind==="narrative content") &&
                                    <div onClick={activateDetailViewer}>
-                                        <p>{description}</p>
+                                        <p className={"creditList"}>{description}</p>
                                    </div>
                                }
 

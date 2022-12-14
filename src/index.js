@@ -1,7 +1,8 @@
 import React from 'react';
 import {render} from "react-dom";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import './App.css'
+import './assets/css/App.css'
+import './assets/css/grid.css'
 
 import Home from "./components/pages/home";
 
