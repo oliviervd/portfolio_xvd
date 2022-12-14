@@ -1,6 +1,6 @@
 import React from "react"
 import useGoogleSheets from "use-google-sheets";
-import {fetchDescription, fetchID, fetchTitle, fetchType, fetchVimeo, fetchYear} from "../utils/db_parser";
+import {fetchDescription, fetchID, fetchTitle, fetchType, fetchVimeo, fetchYear, techSpecs} from "../utils/db_parser";
 
 const PortfolioList = (props) => {
 
@@ -35,10 +35,11 @@ const PortfolioList = (props) => {
                 let _kind = item.kind;
                 let _vimeo_id = fetchVimeo(item);
                 let _description = fetchDescription(item);
+                let _techSpec = techSpecs(item);
 
                 let _detailDB = [];
                 _detailDB.push({'vimeo': _vimeo_id, "title": _title,
-                    "description": _description, "type": _type, "year": _year})
+                    "description": _description, "type": _type, "year": _year, "techSpecs": _techSpec})
 
                 function activateDetailViewer() {
                     props.setShowWorkID(_id);
@@ -53,6 +54,14 @@ const PortfolioList = (props) => {
                         props.setDetailDB(_detailDB);
                         props.setHideBranded(true);
                     }
+                }
+
+                let i = 0, ps = document.getElementsByTagName("p");
+                let len
+                for(len = ps.length; i<len; i++)
+                {
+                    let p = ps[i];
+                    p.innerHTML = p.innerHTML.replace(/\b([A-Z]{2,})\b/g, "<b>$1</b>");
                 }
 
                 return(

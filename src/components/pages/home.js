@@ -1,4 +1,5 @@
-import React, {Suspense, lazy, useState} from "react";
+import React, {Suspense, lazy, useState, useEffect, useLayoutEffect} from "react";
+import {makeBold} from "../utils/utils";
 import {useMediaQuery} from "react-responsive";
 
 const Header = lazy(()=>import("../elements/header"))
@@ -32,7 +33,6 @@ const Home = () => {
         setHideNarrative(false);
         setHideBranded(false);
     }
-
 
     return(
         <div>

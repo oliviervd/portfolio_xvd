@@ -1,4 +1,5 @@
-import React, {lazy, Suspense, useState} from "react";
+import React, {lazy, Suspense, useLayoutEffect, useState} from "react";
+import {makeBold} from "../utils/utils";
 
 const Theater = lazy(()=>import("./theater"))
 const PortfolioList = lazy(()=> import("../elements/PotrfolioList"))
@@ -8,7 +9,7 @@ const HighlightElement = (props) => {
 
     const [hideDescription, setHideDescription] = useState(false);
 
-    let vimeoID, title, description, year, type;
+    let vimeoID, title, description, year, type, techSpecs;
 
     if (props.windowIsOpen) {
         vimeoID = props.detailDB[0].vimeo;
@@ -16,16 +17,11 @@ const HighlightElement = (props) => {
         description = props.detailDB[0].description;
         year = props.detailDB[0].year;
         type = props.detailDB[0].type;
+        techSpecs = props.detailDB[0].techSpecs;
+        console.log(techSpecs);
     }
 
-    let i = 0, ps = document.getElementsByTagName("p");
-    let len
-    for(len = ps.length; i<len; i++)
-    {
-        let p = ps[i];
-        p.innerHTML = p.innerHTML.replace(/\b([A-Z]{2,})\b/g, "<b>$1</b>");
-    }
-
+    useLayoutEffect(makeBold);
 
     return(
         <div>
@@ -59,8 +55,13 @@ const HighlightElement = (props) => {
                             </div>
                             <div>
                                 {hideDescription &&
-                                    <div>
+                                    <div className={"grid-5-1-4"}>
                                         <p>{description}</p>
+                                        <div></div>
+                                        <div>
+                                            <p className={"accent"}>tech specs: </p>
+                                            <p>{techSpecs}</p>
+                                        </div>
                                     </div>
                                 }
                             </div>

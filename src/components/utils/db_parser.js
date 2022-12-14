@@ -5,6 +5,14 @@ export function fetchID(i) {
     return i.id;
 }
 
+export function techSpecs(i) {
+    let techSpecs;
+    if(i.techSpecs !== "") {
+        techSpecs = i.techSpecs;
+    }
+    return techSpecs
+}
+
 export function fetchVimeo(i) {
     let vimeo;
     if (i.vimeo !== "") {

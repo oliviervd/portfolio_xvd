@@ -1,4 +1,4 @@
-import React, {} from "react";
+import React, {useLayoutEffect} from "react";
 import useGoogleSheets from "use-google-sheets";
 import {
     fetchImage,
@@ -8,10 +8,11 @@ import {
     fetchTitle,
     fetchID,
     fetchYear,
-    fetchType,
+    fetchType, techSpecs,
 } from "../utils/db_parser";
 import FetchData from "../utils/fetchData";
 import VideoViewer from "./videoViewer";
+import {makeBold} from "../utils/utils";
 
 const PortfolioElement = (props) => {
 
@@ -39,10 +40,12 @@ const PortfolioElement = (props) => {
         })
     })
 
+    makeBold();
+
     return (
        <div>
            {_portfolio.map((item => {
-               let description, title, directed_by, vimeo_id, sort, kind, _img, type, id, year;
+               let description, title, directed_by, vimeo_id, sort, kind, _img, type, id, year, techSpec;
                id = fetchID(item); // id of the project (Database).
                title = fetchTitle(item); // title of the project
                description = fetchDescription(item) // description of the project
@@ -53,11 +56,12 @@ const PortfolioElement = (props) => {
                _img = fetchImage(item)
                type = fetchType(item)
                year = fetchYear(item)
+               techSpec = techSpecs(item);
 
                //tempDB for detailed;
                let detailDB = [];
                detailDB.push({'vimeo': vimeo_id, "title": title,
-                   "description": description, "type": type, "year": year})
+                   "description": description, "type": type, "year": year, "techSpecs": techSpec})
 
                function activateDetailViewer() {
                    // function to set state of what will be shown in the detail viewer and which one to open.
@@ -80,13 +84,6 @@ const PortfolioElement = (props) => {
                if (kind.trim() === sort.trim()) {
 
                    // function to set UPPERCASE in bold when tag is p. -- used for credit list.
-                   let i = 0, ps = document.getElementsByTagName("p");
-                   let len
-                   for(len = ps.length; i<len; i++)
-                   {
-                       let p = ps[i];
-                       p.innerHTML = p.innerHTML.replace(/\b([A-Z]{2,})\b/g, "<b>$1</b>");
-                   }
 
                    return(
                        <div>
