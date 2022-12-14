@@ -10,10 +10,9 @@ const Home = () => {
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 1224px)'
     })
-    const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' })
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
-    const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
-    const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
+    const isTabletOrMobile = useMediaQuery({
+        query: '(max-width: 1224px)'
+    })
 
     const [showWorkID, setShowWorkID] = useState("test");
     const [detailNarrativeWindowOpen, setDetailNarrativeWindowOpen] = useState(false);
@@ -40,7 +39,9 @@ const Home = () => {
             {isTabletOrMobile &&
                 <div>
                     <Suspense>
-                        <Header showBio={false} hamburger={true}/>
+                        <Header showBio={false} hamburger={true}
+                                isDesktopOrLaptop={isDesktopOrLaptop}
+                                isTabletOrMobile={isTabletOrMobile}/>
                     </Suspense>
                     <h3>mobile support of the website is currently under construction, please refer to the browser in the meantime.</h3>
                 </div>
@@ -54,7 +55,9 @@ const Home = () => {
                         <div className="gridH-25-1-74" style={{overflow: "hidden"}}>
                             <div className={"lineV lineBottom"}>
                                 <Suspense>
-                                    <Header initGrid={initGrid} showBio={true} hamburger={false}/>
+                                    <Header initGrid={initGrid} showBio={true} hamburger={false}
+                                            isDesktopOrLaptop={isDesktopOrLaptop}
+                                            isTabletOrMobile={isTabletOrMobile} />
                                 </Suspense>
                             </div>
                             <br/>
