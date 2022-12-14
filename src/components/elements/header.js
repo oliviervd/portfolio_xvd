@@ -1,6 +1,6 @@
 import React from "react";
-import Menu from "./menu"
-import {SlEnvolope, SlSocialInstagram, SlSocialLinkedin, SlPhone} from "react-icons/sl"
+import HamburgerMenu from "./HamburgerMenu";
+import {SlEnvolope, SlSocialInstagram, SlSocialLinkedin, SlPhone, SlMenu} from "react-icons/sl"
 import {SiImdb} from "react-icons/si"
 
 
@@ -9,12 +9,29 @@ const Header = (props) => {
     return(
 
         <div className={"gridH-4-1 header"}>
-            <div className="menu-item" onClick={props.initGrid}>
-                <h1 className="upper accent">Xavier Van D'huynslager</h1>
-                {props.showBio &&
-                    <p>Xavier Van D'huynslager is a freelance Director of Photography based in Ghent, Belgium. -Available for global hire.</p>
-                }
-            </div>
+            {props.isDesktopOrLaptop &&
+                <div className="menu-item" onClick={props.initGrid}>
+                    <h1 className="upper accent">Xavier Van D'huynslager</h1>
+                    {props.showBio &&
+                        <p>Xavier Van D'huynslager is a freelance Director of Photography based in Ghent, Belgium. -Available for global hire.</p>
+                    }
+                </div>
+            }
+
+            {props.isTabletOrMobile &&
+                <div className="menu-item" onClick={props.initGrid}>
+                    <div className={"grid-9-1"}>
+                        <h1 className="upper accent">Xavier Van D'huynslager</h1>
+                        <div className={"center"} style={{margin: "1rem"}}>
+                            <HamburgerMenu/>
+                        </div>
+                    </div>
+                    {props.showBio &&
+                        <p>Xavier Van D'huynslager is a freelance Director of Photography based in Ghent, Belgium. -Available for global hire.</p>
+                    }
+                </div>
+            }
+
             {/*
                     <div>
                         <img className="image_fit" src="media/xav.jpg"/>
