@@ -66,6 +66,11 @@
     grid-template-columns: repeat(4, 1fr);
 }
 
+.grid-65-05-30{
+    display: grid;
+    grid-template-columns: 6.5fr 0.5fr 3fr;
+}
+
 .gridH-4-1{
     display: grid;
     grid-template-rows: 4fr 1fr;
@@ -80,3 +85,4 @@
     display: grid;
     grid-template-rows: 2.5fr 0.1fr 7.4fr;
 }
+

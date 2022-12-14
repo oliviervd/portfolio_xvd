@@ -34,6 +34,8 @@ const Home = () => {
         setHideBranded(false);
     }
 
+    useEffect(makeBold);
+
     return(
         <div>
             {isTabletOrMobile &&

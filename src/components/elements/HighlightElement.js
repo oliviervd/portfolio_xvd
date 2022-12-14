@@ -21,8 +21,6 @@ const HighlightElement = (props) => {
         console.log(techSpecs);
     }
 
-    useLayoutEffect(makeBold);
-
     return(
         <div>
             {!props.windowIsOpen &&
@@ -55,7 +53,7 @@ const HighlightElement = (props) => {
                             </div>
                             <div>
                                 {hideDescription &&
-                                    <div className={"grid-5-1-4"}>
+                                    <div className={"grid-65-05-30"}>
                                         <p>{description}</p>
                                         <div></div>
                                         <div>
