@@ -2,7 +2,7 @@ import React, {lazy, Suspense, useLayoutEffect, useState} from "react";
 import {makeBold} from "../utils/utils";
 
 const Theater = lazy(()=>import("./theater"))
-const PortfolioList = lazy(()=> import("../elements/PotrfolioList"))
+const PortfolioList = lazy(()=> import("./PotrfolioList"))
 
 
 const HighlightElement = (props) => {
