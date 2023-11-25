@@ -297,6 +297,11 @@ a:hover {
   display: none;
 }
 
+.grid-1-15-4 {
+  display: grid;
+  grid-template-columns: 1fr 15fr 4fr;
+}
+
 @media (max-width: 900px) {
   .project_container {
     padding-bottom: 20px;
