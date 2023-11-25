@@ -15,7 +15,7 @@ const PortfolioElement = (props) => {
   return (
     <div>
       {project && (
-        <div>
+        <div className="projects_container">
           {project.map((item) => {
             let description,
               title,
@@ -77,66 +77,61 @@ const PortfolioElement = (props) => {
               // function to set UPPERCASE in bold when tag is p. -- used for credit list.
 
               return (
-                <div>
-                  <div className="project_container">
-                    {props.type && (
-                      <div className={"grid-1-15-4"}>
-                        <p className={"text-rotate upper typeBox"}>{type}</p>
-                        <h1
-                          onClick={activateDetailViewer}
-                          className="accent upper"
-                        >
-                          {title}
-                        </h1>
-                        <p
-                          onClick={activateDetailViewer}
-                          className={"link accent"}
-                        >
-                          read more
-                        </p>
-                      </div>
-                    )}
-                    {!props.type && (
-                      <div className={"grid-1-15-4"}>
-                        <div />
-                        <h1
-                          onClick={activateDetailViewer}
-                          className="accent upper"
-                        >
-                          {title}
-                        </h1>
-
-                        <p
-                          onClick={activateDetailViewer}
-                          className={"link accent"}
-                        >
-                          read more
-                        </p>
-                      </div>
-                    )}
-                    <VideoViewer vimeo_id={vimeo_id} youtube_id={youtube_id} />
-                    <img className="image_fit" alt={""} src={_img} />
-
-                    {/*if narrative content display like this*/}
-
-                    {kind === "narrative content" && (
+                <div className="project_container">
+                  {props.type && (
+                    <div className={"grid-1-15-4"}>
+                      <p className={"text-rotate upper typeBox"}>{type}</p>
+                      <h1
+                        onClick={activateDetailViewer}
+                        className="accent upper"
+                      >
+                        {title}
+                      </h1>
                       <p
                         onClick={activateDetailViewer}
-                        className={"creditList"}
+                        className={"link accent"}
                       >
-                        {description}
+                        read more
                       </p>
-                    )}
+                    </div>
+                  )}
+                  {!props.type && (
+                    <div className={"grid-1-15-4"}>
+                      <div />
+                      <h1
+                        onClick={activateDetailViewer}
+                        className="accent upper"
+                      >
+                        {title}
+                      </h1>
 
-                    {/*if branded content display like this*/}
-
-                    {kind === "branded content" && (
-                      <p onClick={activateDetailViewer}>
-                        directed by: {directed_by}
+                      <p
+                        onClick={activateDetailViewer}
+                        className={"link accent"}
+                      >
+                        read more
                       </p>
-                    )}
-                    <div className="blackbox"></div>
-                  </div>
+                    </div>
+                  )}
+                  <VideoViewer vimeo_id={vimeo_id} youtube_id={youtube_id} />
+                  <img className="image_fit" alt={""} src={_img} />
+
+                  {/*if narrative content display like this*/}
+
+                  {kind === "narrative content" && (
+                    <p onClick={activateDetailViewer} className={"creditList"}>
+                      {description}
+                    </p>
+                  )}
+
+                  {/*if branded content display like this*/}
+
+                  {kind === "branded content" && (
+                    <p onClick={activateDetailViewer}>
+                      directed by: {directed_by}
+                    </p>
+                  )}
+                  <div className="blackbox"></div>
                 </div>
               );
             }
