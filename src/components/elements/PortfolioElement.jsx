@@ -78,27 +78,40 @@ const PortfolioElement = (props) => {
 
               return (
                 <div>
-                  <div>
+                  <div className="project_container">
                     {props.type && (
                       <div className={"grid-1-15-4"}>
                         <p className={"text-rotate upper typeBox"}>{type}</p>
-                        <div onClick={activateDetailViewer}>
-                          <h1 className="accent upper">{title}</h1>
-                        </div>
-                        <div onClick={activateDetailViewer}>
-                          <p className={"link accent"}>read more</p>
-                        </div>
+                        <h1
+                          onClick={activateDetailViewer}
+                          className="accent upper"
+                        >
+                          {title}
+                        </h1>
+                        <p
+                          onClick={activateDetailViewer}
+                          className={"link accent"}
+                        >
+                          read more
+                        </p>
                       </div>
                     )}
                     {!props.type && (
                       <div className={"grid-1-15-4"}>
                         <div />
-                        <div onClick={activateDetailViewer}>
-                          <h1 className="accent upper">{title}</h1>
-                        </div>
-                        <div onClick={activateDetailViewer}>
-                          <p className={"link accent"}>read more</p>
-                        </div>
+                        <h1
+                          onClick={activateDetailViewer}
+                          className="accent upper"
+                        >
+                          {title}
+                        </h1>
+
+                        <p
+                          onClick={activateDetailViewer}
+                          className={"link accent"}
+                        >
+                          read more
+                        </p>
                       </div>
                     )}
                     <VideoViewer vimeo_id={vimeo_id} youtube_id={youtube_id} />
@@ -107,17 +120,20 @@ const PortfolioElement = (props) => {
                     {/*if narrative content display like this*/}
 
                     {kind === "narrative content" && (
-                      <div onClick={activateDetailViewer}>
-                        <p className={"creditList"}>{description}</p>
-                      </div>
+                      <p
+                        onClick={activateDetailViewer}
+                        className={"creditList"}
+                      >
+                        {description}
+                      </p>
                     )}
 
                     {/*if branded content display like this*/}
 
                     {kind === "branded content" && (
-                      <div onClick={activateDetailViewer}>
-                        <p>directed by: {directed_by}</p>
-                      </div>
+                      <p onClick={activateDetailViewer}>
+                        directed by: {directed_by}
+                      </p>
                     )}
                     <div className="blackbox"></div>
                   </div>
