@@ -16,7 +16,7 @@ const PortfolioList = (props) => {
             let description,
               title,
               directed_by,
-              vimeo_id,
+              vimeo_ids,
               still,
               sort,
               kind,
@@ -28,7 +28,7 @@ const PortfolioList = (props) => {
             description =
               item.projectInformation.description[0].children[0].text;
             directed_by = item.projectInformation.directedBy.firstName;
-            vimeo_id = item.mediaGroup.vimeoURI; // id to fetch vimeo video
+            vimeo_ids = item.mediaGroup.vimeo;
             sort = props.kind; // feature, short, ...
             kind = item.projectInformation.projectCategory; //branded content or narrative content
             // add type
@@ -42,7 +42,7 @@ const PortfolioList = (props) => {
             let detailDB = [];
             detailDB.push({
               still: still,
-              vimeo: vimeo_id,
+              vimeo: vimeo_ids,
               title: title,
               description: description,
               type: kind,

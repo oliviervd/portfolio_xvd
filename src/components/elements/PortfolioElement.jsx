@@ -23,6 +23,7 @@ const PortfolioElement = (props) => {
               title,
               still,
               directed_by,
+              vimeo_ids,
               vimeo_id,
               youtube_id,
               sort,
@@ -46,15 +47,17 @@ const PortfolioElement = (props) => {
               still = item.images.url;
             }
             highlight = item.highlight;
+            vimeo_ids = item.mediaGroup.vimeo;
+            console.log(vimeo_ids);
             // add type
             // add image
             // add year
             // add techspecs
-            //tempDB for detailed;
+            //DB for detailed;
             let detailDB = [];
             detailDB.push({
               highlight: highlight,
-              vimeo: vimeo_id,
+              vimeo: vimeo_ids,
               youtube: youtube_id,
               still: still,
               title: title,
@@ -129,7 +132,7 @@ const PortfolioElement = (props) => {
                   )}
                   <VideoViewer
                     still={still}
-                    vimeo_id={vimeo_id}
+                    vimeo_id={vimeo_ids}
                     youtube_id={youtube_id}
                   />
                   <img className="image_fit" alt={""} src={_img} />

@@ -10,6 +10,7 @@ const VideoViewer = (props) => {
   console.log(scale);
   let videoViewer;
   let youtube = false;
+  let vimeo;
   let id;
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 900px)",
@@ -35,12 +36,16 @@ const VideoViewer = (props) => {
     }
   }
 
+  if (props.vimeo_id.length > 0) {
+    vimeo = props.vimeo_id[0]["vimeoURI"];
+  }
+
   if (props.vimeo_id !== "") {
     videoViewer = (
       <div>
         <Vimeo
           width={width * scale}
-          video={props.vimeo_id}
+          video={vimeo}
           showTitle={false}
           loop={true}
           showByline={false}
