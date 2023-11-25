@@ -21,6 +21,7 @@ const PortfolioElement = (props) => {
               title,
               directed_by,
               vimeo_id,
+              youtube_id,
               sort,
               kind,
               _img,
@@ -34,6 +35,7 @@ const PortfolioElement = (props) => {
               item.projectInformation.description[0].children[0].text;
             directed_by = item.projectInformation.directedBy.firstName;
             vimeo_id = item.mediaGroup.vimeoURI; // id to fetch vimeo video
+            youtube_id = item.mediaGroup.youtubeURI; // id to fetch youtube video
             sort = props.kind; // feature, short, ...
             kind = item.projectInformation.projectCategory; //branded content or narrative content
             // add type
@@ -44,6 +46,7 @@ const PortfolioElement = (props) => {
             let detailDB = [];
             detailDB.push({
               vimeo: vimeo_id,
+              youtube: youtube_id,
               title: title,
               description: description,
               type: kind,
@@ -98,7 +101,7 @@ const PortfolioElement = (props) => {
                         </div>
                       </div>
                     )}
-                    <VideoViewer vimeo_id={vimeo_id} />
+                    <VideoViewer vimeo_id={vimeo_id} youtube_id={youtube_id} />
                     <img className="image_fit" alt={""} src={_img} />
 
                     {/*if narrative content display like this*/}
