@@ -1,17 +1,28 @@
-import React from 'react';
-import {render} from "react-dom";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import './assets/css/App.css'
-import './assets/css/grid.css'
+import React from "react";
+import { render } from "react-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
+import "./assets/css/App.css";
+import "./assets/css/grid.css";
 import Home from "./components/pages/home";
 
-const rootElement = document.getElementById('root');
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: { staleTime: Infinity }, // set cache time to 24hrs
+  },
+});
+
+const rootElement = document.getElementById("root");
 render(
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<Home/>} />
-        </Routes>
-    </BrowserRouter>,
-    rootElement
+  <BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
+  </BrowserRouter>,
+  rootElement,
 );
