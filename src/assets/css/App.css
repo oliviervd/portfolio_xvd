@@ -372,15 +372,16 @@ a:hover {
 
   .grid-1-15-4 {
     display: block;
-    h1 {
-      width: auto;
-      font-weight: 900;
-      text-align: center;
-      border-bottom: 2px pink solid;
-    }
-    p {
-      display: none;
-    }
+  }
+
+  .grid-1-15-4 h1 {
+    width: auto;
+    font-weight: 900;
+    text-align: center;
+    border-bottom: 2px pink solid;
+  }
+  .grid-1-15-4 p {
+    display: none;
   }
 }
 
