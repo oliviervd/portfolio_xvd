@@ -17,6 +17,7 @@ const PortfolioList = (props) => {
               title,
               directed_by,
               vimeo_id,
+              still,
               sort,
               kind,
               id,
@@ -31,12 +32,16 @@ const PortfolioList = (props) => {
             sort = props.kind; // feature, short, ...
             kind = item.projectInformation.projectCategory; //branded content or narrative content
             // add type
-            // add image
+            if (item.images) {
+              still = item.images.url;
+            }
+            console.log(still);
             // add year
             // add techspecs
             //tempDB for detailed;
             let detailDB = [];
             detailDB.push({
+              still: still,
               vimeo: vimeo_id,
               title: title,
               description: description,

@@ -47,11 +47,24 @@ const Home = () => {
               isDesktopOrLaptop={isDesktopOrLaptop}
               isTabletOrMobile={isTabletOrMobile}
             />
-          </Suspense>
+          </Suspense>{" "}
           <Suspense>
             <PortfolioElement
               type={true}
               className="PortfolioElement_narrative"
+              kind={"narrative-content"}
+              setShowWorkID={setShowWorkID}
+              setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
+              setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}
+              setDetailDB={setDetailDB}
+              setHideNarrative={setHideNarrative}
+              setHideBranded={setHideBranded}
+            />
+          </Suspense>
+          <Suspense>
+            <PortfolioElement
+              type={true}
+              className="PortfolioElement_branded"
               kind={"branded-content"}
               setShowWorkID={setShowWorkID}
               setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
@@ -171,4 +184,3 @@ const Home = () => {
 };
 
 export default Home;
-

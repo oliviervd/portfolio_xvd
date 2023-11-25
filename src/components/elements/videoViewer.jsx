@@ -2,13 +2,26 @@ import React from "react";
 import Vimeo from "@u-wave/react-vimeo";
 import YouTube from "react-youtube";
 import useWindowDimensions from "../utils/getWindowDimensions";
+import { useMediaQuery } from "react-responsive";
 
 const VideoViewer = (props) => {
   const { width, height } = useWindowDimensions();
   const scale = props.scale;
+  console.log(scale);
   let videoViewer;
   let youtube = false;
   let id;
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 900px)",
+  });
+  const isTabletOrMobile = useMediaQuery({
+    query: "(max-width: 900px)",
+  });
+
+  let youtubeWidth = width;
+  if (isDesktopOrLaptop) {
+    youtubeWidth = width / 3.4;
+  }
 
   function changeControls(e) {
     e.target.controls = "true";
@@ -45,11 +58,11 @@ const VideoViewer = (props) => {
         <YouTube
           videoId={props.youtube_id}
           opts={{
-            width: width / 3.4,
+            width: youtubeWidth,
             height: "300",
+            opts: { showInfo: false, controls: false },
             playerVars: {
               // https://developers.google.com/youtube/player_parameters
-              autoplay: 0, // false
               controls: 0,
             },
           }}
@@ -58,7 +71,11 @@ const VideoViewer = (props) => {
     );
   }
 
-  return <div>{videoViewer}</div>;
+  return (
+    <div className="videoContainer">
+      <div className="videoViewer">{videoViewer}</div>
+    </div>
+  );
 };
 
 export default VideoViewer;

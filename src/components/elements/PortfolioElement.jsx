@@ -19,6 +19,7 @@ const PortfolioElement = (props) => {
           {project.map((item) => {
             let description,
               title,
+              still,
               directed_by,
               vimeo_id,
               youtube_id,
@@ -28,7 +29,8 @@ const PortfolioElement = (props) => {
               type,
               id,
               year,
-              techSpec;
+              techSpec,
+              highlight;
             id = item.id; // id of the project (Database).
             title = item.projectTitle; // title of the project
             description =
@@ -38,6 +40,10 @@ const PortfolioElement = (props) => {
             youtube_id = item.mediaGroup.youtubeURI; // id to fetch youtube video
             sort = props.kind; // feature, short, ...
             kind = item.projectInformation.projectCategory; //branded content or narrative content
+            if (item.images) {
+              still = item.images.url;
+            }
+            highlight = item.highlight;
             // add type
             // add image
             // add year
@@ -45,16 +51,16 @@ const PortfolioElement = (props) => {
             //tempDB for detailed;
             let detailDB = [];
             detailDB.push({
+              highlight: highlight,
               vimeo: vimeo_id,
               youtube: youtube_id,
+              still: still,
               title: title,
               description: description,
               type: kind,
               year: year,
               techSpecs: techSpec,
             });
-
-            console.log(detailDB);
 
             function activateDetailViewer() {
               // function to set state of what will be shown in the detail viewer and which one to open.
@@ -77,7 +83,11 @@ const PortfolioElement = (props) => {
               // function to set UPPERCASE in bold when tag is p. -- used for credit list.
 
               return (
-                <div className="project_container">
+                <div
+                  className={`project_container ${
+                    highlight ? "" : "hideProject"
+                  }`}
+                >
                   {props.type && (
                     <div className={"grid-1-15-4"}>
                       <p className={"text-rotate upper typeBox"}>{type}</p>
@@ -113,7 +123,11 @@ const PortfolioElement = (props) => {
                       </p>
                     </div>
                   )}
-                  <VideoViewer vimeo_id={vimeo_id} youtube_id={youtube_id} />
+                  <VideoViewer
+                    still={still}
+                    vimeo_id={vimeo_id}
+                    youtube_id={youtube_id}
+                  />
                   <img className="image_fit" alt={""} src={_img} />
 
                   {/*if narrative content display like this*/}
