@@ -307,16 +307,18 @@ a:hover {
   }
 
   .project_container h1 {
-    font-size: 1.3em;
+    font-size: 1.4em;
     left: 0;
   }
 
   .project_container .blackbox {
     height: 5px;
+    background: pink;
+    display: none;
   }
 
   .projects_container {
-    padding-top: 60px;
+    padding-top: 20px;
   }
 
   .ControlBar_module_controlBarWrapper__1988764d {
@@ -366,6 +368,19 @@ a:hover {
     opacity: 1;
     transform: translateY(0%);
     transition: all 0.7s ease;
+  }
+
+  .grid-1-15-4 {
+    display: block;
+    h1 {
+      width: auto;
+      font-weight: 900;
+      text-align: center;
+      border-bottom: 2px pink solid;
+    }
+    p {
+      display: none;
+    }
   }
 }
 
