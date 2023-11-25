@@ -293,6 +293,10 @@ a:hover {
   animation: scroll-down 100s linear infinite;
 }
 
+.project-details-mobile {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .project_container {
     padding-bottom: 20px;
@@ -317,6 +321,51 @@ a:hover {
 
   .ControlBar_module_controlBarWrapper__1988764d {
     display: none;
+  }
+
+  .project-details-mobile {
+    display: block;
+  }
+
+  .project-details-mobile.hide {
+    height: 0px;
+    -webkit-transition:
+      height,
+      0.5s linear;
+    -moz-transition:
+      height,
+      0.5s linear;
+    -ms-transition:
+      height,
+      0.5s linear;
+    -o-transition:
+      height,
+      0.5s linear;
+    transition:
+      height,
+      0.5s linear;
+    overflow: hidden;
+  }
+
+  .project-details-mobile.hide p {
+    opacity: 0;
+    transform: translateY(-120%);
+    transition: transform 0.7s ease;
+  }
+
+  .project-details-mobile.active {
+    height: 200px;
+    -webkit-transition: height 0.5s linear;
+    -moz-transition: height 0.5s linear;
+    -ms-transition: height 0.5s linear;
+    -o-transition: height 0.5s linear;
+    transition: height 0.5s linear;
+  }
+
+  .project-details-mobile.active p {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: all 0.7s ease;
   }
 }
 

@@ -1,9 +1,11 @@
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { fetchContentPayload } from "../utils/fetchData";
 import VideoViewer from "./videoViewer";
 import { makeBold } from "../utils/utils";
 
 const PortfolioElement = (props) => {
+  const [details, showDetails] = useState(false);
+
   let _projects, project;
   _projects = fetchContentPayload();
   if (_projects) {
@@ -71,11 +73,13 @@ const PortfolioElement = (props) => {
                 props.setHideBranded(true); // hide branded pane
                 props.setHideNarrative(false); // hide narrative pane
                 props.setDetailDB(detailDB); //populate temp db for detail pane
+                showDetails(!details);
               } else if (kind === "branded-content") {
                 props.setDetailNarrativeWindowOpen(true);
                 props.setHideNarrative(true);
                 props.setHideBranded(false);
                 props.setDetailDB(detailDB);
+                showDetails(!details);
               }
             }
 
@@ -145,6 +149,14 @@ const PortfolioElement = (props) => {
                       directed by: {directed_by}
                     </p>
                   )}
+
+                  <div
+                    className={`project-details-mobile ${
+                      details ? "active" : "hide"
+                    }`}
+                  >
+                    <p>{description}</p>
+                  </div>
                   <div className="blackbox"></div>
                 </div>
               );
