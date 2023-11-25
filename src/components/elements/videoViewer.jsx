@@ -62,4 +62,3 @@ const VideoViewer = (props) => {
 };
 
 export default VideoViewer;
-

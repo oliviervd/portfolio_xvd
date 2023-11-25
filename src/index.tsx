@@ -21,7 +21,6 @@ render(
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
-      <ReactQueryDevtools />
     </QueryClientProvider>
   </BrowserRouter>,
   rootElement,

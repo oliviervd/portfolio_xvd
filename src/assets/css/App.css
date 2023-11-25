@@ -298,8 +298,20 @@ a:hover {
     padding-bottom: 20px;
   }
 
+  .project_container h1 {
+    font-size: 1.5em;
+  }
+
+  .project_container .blackbox {
+    height: 5px;
+  }
+
   .projects_container {
     padding-top: 60px;
+  }
+
+  .ControlBar_module_controlBarWrapper__1988764d {
+    display: none;
   }
 }
 
