@@ -48,10 +48,19 @@ const Home = () => {
               isTabletOrMobile={isTabletOrMobile}
             />
           </Suspense>
-          <h3>
-            mobile support of the website is currently under construction,
-            please refer to the browser in the meantime.
-          </h3>
+          <Suspense>
+            <PortfolioElement
+              type={true}
+              className="PortfolioElement_narrative"
+              kind={"branded-content"}
+              setShowWorkID={setShowWorkID}
+              setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
+              setDetailBrandedWindowOpen={setDetailBrandedWindowOpen}
+              setDetailDB={setDetailDB}
+              setHideNarrative={setHideNarrative}
+              setHideBranded={setHideBranded}
+            />
+          </Suspense>
         </div>
       )}
       {isDesktopOrLaptop && (
@@ -67,7 +76,7 @@ const Home = () => {
                 todo: add map function
                 */}
             <div className="gridH-25-1-74" style={{ overflow: "hidden" }}>
-              <div className={"lineV lineBottom"}>
+              <div className={"lineBottom"}>
                 <Suspense>
                   <Header
                     initGrid={initGrid}
@@ -104,13 +113,13 @@ const Home = () => {
             </div>
 
             {!hideNarrative && (
-              <div className="lineV">
+              <div className="">
                 <h2 className="text-rotate accent upper">narrative content</h2>
               </div>
             )}
 
             {!hideNarrative && (
-              <div className={"lineV scroller"}>
+              <div className={"scroller"}>
                 <Suspense>
                   <PortfolioElement
                     type={true}
@@ -128,7 +137,7 @@ const Home = () => {
             )}
 
             {!hideBranded && (
-              <div className="lineV">
+              <div className="">
                 <h2 className="text-rotate accent upper">branded content</h2>
               </div>
             )}
@@ -138,7 +147,7 @@ const Home = () => {
                 */}
 
             {!hideBranded && (
-              <div className={"lineV scroller"}>
+              <div className={"scroller"}>
                 <Suspense>
                   <PortfolioElement
                     type={true}
