@@ -1,63 +1,19 @@
 import React, { useLayoutEffect } from "react";
-import useGoogleSheets from "use-google-sheets";
 import { fetchContentPayload } from "../utils/fetchData";
-import {
-  fetchImage,
-  fetchVimeo,
-  fetchDescription,
-  fetchDirectedBy,
-  fetchTitle,
-  fetchID,
-  fetchYear,
-  fetchType,
-  techSpecs,
-} from "../utils/db_parser";
-import FetchData from "../utils/fetchData";
 import VideoViewer from "./videoViewer";
 import { makeBold } from "../utils/utils";
 
 const PortfolioElement = (props) => {
-  // fetch data from google spreadsheet
-  // todo: hide API key
-  // todo: make local function in utils for this
-  //
-  const _projects = fetchContentPayload();
-  console.log(_projects);
-
-  const { data, loading, error } = useGoogleSheets({
-    apiKey: "AIzaSyCqIBCTia_C6CvAAixtiost-E3hicp7nl4",
-    sheetId: "1Npm-xqwwadyHybkXHUE7imeuh3PjsQn83Hdfaw0epc0",
-    datasheetsOptions: [{ id: "Sheet1" }],
-  });
-
-  if (loading) {
-    return (
-      <div>
-        <p>Loading...</p>
-      </div>
-    );
+  let _projects, project;
+  _projects = fetchContentPayload();
+  if (_projects) {
+    project = _projects["docs"];
   }
-
-  if (error) {
-    return (
-      <div>
-        <p>Error!</p>
-      </div>
-    );
-  }
-
-  let _portfolio = [];
-  data.map((x) => {
-    x.data.map((l) => {
-      _portfolio.push(l);
-    });
-  });
-
-  makeBold();
 
   return (
     <div>
-      {_portfolio.map((item) => {
+      {project.map((item) => {
+        console.log(item);
         let description,
           title,
           directed_by,
@@ -69,39 +25,40 @@ const PortfolioElement = (props) => {
           id,
           year,
           techSpec;
-        id = fetchID(item); // id of the project (Database).
-        title = fetchTitle(item); // title of the project
-        description = fetchDescription(item); // description of the project
-        directed_by = fetchDirectedBy(item);
-        vimeo_id = fetchVimeo(item); // id to fetch vimeo video
+        id = item.id; // id of the project (Database).
+        title = item.projectTitle; // title of the project
+        description = item.projectInformation.description[0].children[0].text;
+        directed_by = item.projectInformation.directedBy.firstName;
+        vimeo_id = item.mediaGroup.vimeoURI; // id to fetch vimeo video
         sort = props.kind; // feature, short, ...
-        kind = item.kind; //branded content or narrative content
-        _img = fetchImage(item);
-        type = fetchType(item);
-        year = fetchYear(item);
-        techSpec = techSpecs(item);
-
+        kind = item.projectInformation.projectCategory; //branded content or narrative content
+        // add type
+        // add image
+        // add year
+        // add techspecs
         //tempDB for detailed;
         let detailDB = [];
         detailDB.push({
           vimeo: vimeo_id,
           title: title,
           description: description,
-          type: type,
+          type: kind,
           year: year,
           techSpecs: techSpec,
         });
 
+        console.log(detailDB);
+
         function activateDetailViewer() {
           // function to set state of what will be shown in the detail viewer and which one to open.
           props.setShowWorkID(id);
-          if (kind === "narrative content") {
+          if (kind === "narrative-content") {
             props.setDetailNarrativeWindowOpen(true); // set detail pane open
             // props.setDetailBrandedWindowOpen(false); //todo: check maybe not used
             props.setHideBranded(true); // hide branded pane
             props.setHideNarrative(false); // hide narrative pane
             props.setDetailDB(detailDB); //populate temp db for detail pane
-          } else if (kind === "branded content") {
+          } else if (kind === "branded-content") {
             props.setDetailNarrativeWindowOpen(true);
             props.setHideNarrative(true);
             props.setHideBranded(false);
@@ -166,4 +123,3 @@ const PortfolioElement = (props) => {
 };
 
 export default PortfolioElement;
-
