@@ -88,4 +88,3 @@ const HighlightElement = (props) => {
   );
 };
 export default HighlightElement;
-

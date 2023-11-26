@@ -21,6 +21,7 @@ const PortfolioElement = (props) => {
           {project.map((item) => {
             let description,
               title,
+              gif,
               still,
               directed_by,
               vimeo_ids,
@@ -35,6 +36,9 @@ const PortfolioElement = (props) => {
               techSpec,
               highlight;
             id = item.id; // id of the project (Database).
+            if (item.heroImage) {
+              gif = "https://" + item.heroImage.url;
+            }
             title = item.projectTitle; // title of the project
             description =
               item.projectInformation.description[0].children[0].text;
@@ -48,15 +52,10 @@ const PortfolioElement = (props) => {
             }
             highlight = item.highlight;
             vimeo_ids = item.mediaGroup.vimeo;
-            console.log(vimeo_ids);
-            // add type
-            // add image
-            // add year
-            // add techspecs
-            //DB for detailed;
             let detailDB = [];
             detailDB.push({
               highlight: highlight,
+              gif: gif,
               vimeo: vimeo_ids,
               youtube: youtube_id,
               still: still,
@@ -130,12 +129,14 @@ const PortfolioElement = (props) => {
                       </p>
                     </div>
                   )}
+                  {/* 
                   <VideoViewer
                     still={still}
                     vimeo_id={vimeo_ids}
                     youtube_id={youtube_id}
                   />
-                  <img className="image_fit" alt={""} src={_img} />
+ */}
+                  <img className="image_fit" alt={""} src={gif} />
 
                   {/*if narrative content display like this*/}
 
