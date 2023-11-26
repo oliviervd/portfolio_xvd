@@ -301,6 +301,27 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr 15fr 4fr;
 }
+.image-gallery__container {
+  display: flex;
+  flex-flow: wrap;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+}
+
+.image-gallery__image {
+  width: 30%;
+  margin: 10px;
+}
+
+.image-gallery__container img {
+  width: 100%;
+}
+
+.portfolio-item {
+  height: auto;
+  overflow: scroll;
+}
 
 @media (max-width: 900px) {
   .project_container {
@@ -389,4 +410,3 @@ a:hover {
     display: none;
   }
 }
-

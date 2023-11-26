@@ -7,16 +7,19 @@ const PortfolioList = lazy(() => import("./PortfolioList"));
 const HighlightElement = (props) => {
   const [hideDescription, setHideDescription] = useState(false);
 
-  let vimeoID, title, description, year, type, techSpecs;
+  let vimeoID, title, description, year, type, techSpecs, images;
 
   if (props.windowIsOpen) {
-    vimeoID = props.detailDB[0].vimeo[0]["vimeoURI"];
+    if (props.detailDB[0].vimeo[0]["vimeoURI"]) {
+      vimeoID = props.detailDB[0].vimeo[0]["vimeoURI"];
+    }
     console.log(vimeoID);
     title = props.detailDB[0].title;
     description = props.detailDB[0].description;
     year = props.detailDB[0].year;
     type = props.detailDB[0].type;
     techSpecs = props.detailDB[0].techSpecs;
+    images = props.detailDB[0].images;
   }
 
   return (
@@ -81,6 +84,13 @@ const HighlightElement = (props) => {
               </Suspense>
               <div className={"lineBottom"}></div>
             </div>
+            <section className={"image-gallery__container"}>
+              {images.map((image) => (
+                <div className="image-gallery__image">
+                  <img src={"https://" + image.image.url} />
+                </div>
+              ))}
+            </section>
           </div>
         </div>
       )}

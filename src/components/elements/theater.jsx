@@ -14,7 +14,7 @@ const Theater = (props) => {
   const { height, width } = useWindowDimensions();
   const divStyle = {
     width: width * 0.65,
-    height: height,
+    height: "auto",
   };
 
   let youtubeWidth = width;
@@ -37,4 +37,3 @@ const Theater = (props) => {
 };
 
 export default Theater;
-

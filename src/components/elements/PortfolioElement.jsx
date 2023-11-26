@@ -23,6 +23,7 @@ const PortfolioElement = (props) => {
               title,
               gif,
               still,
+              images,
               directed_by,
               vimeo_ids,
               vimeo_id,
@@ -50,12 +51,15 @@ const PortfolioElement = (props) => {
             if (item.images) {
               still = item.images.url;
             }
+
+            images = item.gallery;
             highlight = item.highlight;
             vimeo_ids = item.mediaGroup.vimeo;
             let detailDB = [];
             detailDB.push({
               highlight: highlight,
               gif: gif,
+              images: images,
               vimeo: vimeo_ids,
               youtube: youtube_id,
               still: still,

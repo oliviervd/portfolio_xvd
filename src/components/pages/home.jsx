@@ -104,7 +104,7 @@ const Home = () => {
               <div
                 className={
                   detailNarrativeWindowOpen
-                    ? "lineBottom"
+                    ? "lineBottom portfolio-item"
                     : "lineBottom lineTop scroller"
                 }
               >
