@@ -140,7 +140,7 @@ const PortfolioElement = (props) => {
                     youtube_id={youtube_id}
                   />
  */}
-                  <img className="image_fit" alt={""} src={gif} />
+                  <img loading="lazy" className="image_fit" alt={""} src={gif} />
 
                   {/*if narrative content display like this*/}
 
