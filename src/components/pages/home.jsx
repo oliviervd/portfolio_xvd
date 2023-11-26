@@ -108,6 +108,13 @@ const Home = () => {
                     : "lineBottom lineTop scroller"
                 }
               >
+                {" "}
+                {/*
+
+
+
+
+                */}
                 <Suspense>
                   <HighlightElement
                     setDetailNarrativeWindowOpen={setDetailNarrativeWindowOpen}
