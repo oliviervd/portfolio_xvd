@@ -10,13 +10,13 @@ const HighlightElement = (props) => {
   let vimeoID, title, description, year, type, techSpecs;
 
   if (props.windowIsOpen) {
-    vimeoID = props.detailDB[0].vimeo;
+    vimeoID = props.detailDB[0].vimeo[0]["vimeoURI"];
+    console.log(vimeoID);
     title = props.detailDB[0].title;
     description = props.detailDB[0].description;
     year = props.detailDB[0].year;
     type = props.detailDB[0].type;
     techSpecs = props.detailDB[0].techSpecs;
-    console.log(techSpecs);
   }
 
   return (
