@@ -153,7 +153,7 @@ a:hover {
 
 .image_fit {
   object-fit: contain;
-  max-width: 100%;
+  width: 100%;
   max-height: 100%;
 }
 
