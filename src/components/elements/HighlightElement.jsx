@@ -89,7 +89,7 @@ const HighlightElement = (props) => {
             <section className={"image-gallery__container"}>
               {images.map((image) => (
                 <div className="image-gallery__image">
-                  <img loading="lazy" src={"https://" + image.image.url} />
+                  <img loading="lazy" src={image.image.url} />
                 </div>
               ))}
             </section>
