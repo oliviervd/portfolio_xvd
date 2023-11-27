@@ -38,7 +38,7 @@ const PortfolioElement = (props) => {
               highlight;
             id = item.id; // id of the project (Database).
             if (item.heroImage) {
-              gif = "https://" + item.heroImage.url;
+              gif = item.heroImage.url;
             }
             title = item.projectTitle; // title of the project
             description =
