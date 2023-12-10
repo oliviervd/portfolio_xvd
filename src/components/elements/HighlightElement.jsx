@@ -66,7 +66,6 @@ const HighlightElement = (props) => {
                 <Suspense>
                   <Theater vimeo_id={vimeoID} youtube_id={youtubeID} />
                 </Suspense>
-                <div className={"lineBottom"}></div>
               </div>
             </div>
             <div className="project__split-view">
