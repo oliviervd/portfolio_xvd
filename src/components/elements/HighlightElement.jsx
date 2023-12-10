@@ -57,12 +57,10 @@ const HighlightElement = (props) => {
                     </h1>
                   </div>
                 </div>
-                <div className={"grid_even--3"}>
-                  <div></div>
-                  <p className={"link"} onClick={props.initGrid}>
-                    ⤫close
-                  </p>
-                </div>
+
+                <p className={"link close"} onClick={props.initGrid}>
+                  ⤫close
+                </p>
               </div>
               <div>
                 <Suspense>

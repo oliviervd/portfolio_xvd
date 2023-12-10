@@ -20,6 +20,10 @@
   font-weight: 900;
 }
 
+.close {
+  text-align: end;
+}
+
 #about--description {
   font-size: 20px;
   margin: 20px;
@@ -43,6 +47,10 @@
 
 .image-gallery__container img {
   width: 100%;
+}
+
+.image-gallery__container img:hover {
+  opacity: 0.7;
 }
 
 .react-player,
