@@ -1,43 +1,41 @@
-import React, { lazy, Suspense, useLayoutEffect, useState } from "react";
+import React, {
+  lazy,
+  Suspense,
+  useEffect,
+  useLayoutEffect,
+  useState,
+} from "react";
 import { makeBold } from "../utils/utils";
+import { serialize } from "../utils/serialize";
 
 const Theater = lazy(() => import("./theater"));
 const PortfolioList = lazy(() => import("./PortfolioList"));
 
 const HighlightElement = (props) => {
-  const [hideDescription, setHideDescription] = useState(false);
-
-  let vimeoID, title, description, year, type, techSpecs, images;
+  let vimeoID, title, year, type, techSpecs, images, _description;
 
   if (props.windowIsOpen) {
     if (props.detailDB[0].vimeo[0]["vimeoURI"]) {
       vimeoID = props.detailDB[0].vimeo[0]["vimeoURI"];
     }
-    console.log(vimeoID);
     title = props.detailDB[0].title;
-    description = props.detailDB[0].description;
     year = props.detailDB[0].year;
     type = props.detailDB[0].type;
     techSpecs = props.detailDB[0].techSpecs;
     images = props.detailDB[0].images;
   }
 
+  useEffect(() => {
+    if (props.detailDB) {
+      const section = document.querySelector("#about--description");
+      if (section) {
+        section.innerHTML = props.detailDB[0].description;
+      }
+    }
+  }, [props.detailDB && props.detailDB[0] && props.detailDB[0].description]);
+
   return (
     <div>
-      {!props.windowIsOpen && (
-        <div>
-          {/*
-          <PortfolioList
-            initGrid={props.initGrid}
-            setShowWorkID={props.setShowWorkID}
-            setDetailNarrativeWindowOpen={props.setDetailNarrativeWindowOpen}
-            setDetailBrandedWindowOpen={props.setDetailBrandedWindowOpen}
-            setHideBranded={props.setHideBranded}
-            setDetailDB={props.setDetailDB}
-          />
-          */}
-        </div>
-      )}
       {props.windowIsOpen && (
         <div>
           <div className={"gridH-1-19"}>
@@ -55,12 +53,6 @@ const HighlightElement = (props) => {
                   </div>
                 </div>
                 <div className={"grid_even--3"}>
-                  <p
-                    className={"link"}
-                    onClick={() => setHideDescription(!hideDescription)}
-                  >
-                    ↧description
-                  </p>
                   <div></div>
                   <p className={"link"} onClick={props.initGrid}>
                     ⤫close
@@ -68,19 +60,10 @@ const HighlightElement = (props) => {
                 </div>
               </div>
               <div>
-                {hideDescription && (
-                  <div className={"grid-65-05-30"}>
-                    <p>{description}</p>
-                    <div></div>
-                    <div>
-                      <p className={"accent"}>tech specs: </p>
-                      <p>{techSpecs}</p>
-                    </div>
-                  </div>
-                )}
+                <div id={"about--description"}></div>
               </div>
             </div>
-            <div>
+            <div style={{ margin: "20px" }}>
               <Suspense>
                 <Theater vimeo_id={vimeoID} />
               </Suspense>

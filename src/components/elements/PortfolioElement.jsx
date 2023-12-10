@@ -1,7 +1,6 @@
 import React, { useLayoutEffect, useState } from "react";
 import { fetchContentPayload } from "../utils/fetchData";
-import VideoViewer from "./videoViewer";
-import { makeBold } from "../utils/utils";
+import { serialize } from "../utils/serialize";
 
 const PortfolioElement = (props) => {
   const [details, showDetails] = useState(false);
@@ -35,14 +34,15 @@ const PortfolioElement = (props) => {
               id,
               year,
               techSpec,
+              test,
               highlight;
             id = item.id; // id of the project (Database).
             if (item.heroImage) {
               gif = item.heroImage.url;
             }
             title = item.projectTitle; // title of the project
-            description =
-              item.projectInformation.description[0].children[0].text;
+            description = serialize(item.projectInformation.description[0]);
+
             directed_by = item.projectInformation.directedBy.firstName;
             vimeo_id = item.mediaGroup.vimeoURI; // id to fetch vimeo video
             youtube_id = item.mediaGroup.youtubeURI; // id to fetch youtube video
@@ -140,13 +140,18 @@ const PortfolioElement = (props) => {
                     youtube_id={youtube_id}
                   />
  */}
-                  <img loading="lazy" className="image_fit" alt={""} src={gif} />
+                  <img
+                    loading="lazy"
+                    className="image_fit"
+                    alt={""}
+                    src={gif}
+                  />
 
                   {/*if narrative content display like this*/}
 
                   {kind === "narrative content" && (
                     <p onClick={activateDetailViewer} className={"creditList"}>
-                      {description}
+                      {}
                     </p>
                   )}
 
