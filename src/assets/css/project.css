@@ -40,3 +40,10 @@
 .image-gallery__container img {
   width: 100%;
 }
+
+.react-player,
+iframe {
+  max-width: 1800px;
+  width: 1800px;
+  height: 900px;
+}

@@ -10,7 +10,7 @@ const Theater = lazy(() => import("./theater"));
 const PortfolioList = lazy(() => import("./PortfolioList"));
 
 const HighlightElement = (props) => {
-  let vimeoID, title, year, type, techSpecs, images, _description;
+  let vimeoID, youtubeID, title, year, type, techSpecs, images, _description;
 
   if (props.windowIsOpen) {
     if (props.detailDB[0].vimeo[0]["vimeoURI"]) {
@@ -33,7 +33,7 @@ const HighlightElement = (props) => {
   }, [props.detailDB && props.detailDB[0] && props.detailDB[0].description]);
 
   return (
-    <div>
+    <div style={{ marginLeft: "20px", marginRight: "20px" }}>
       {props.windowIsOpen && (
         <div className="project__container">
           <div className={"gridH-1-19"}>
@@ -62,7 +62,7 @@ const HighlightElement = (props) => {
               </div>
               <div>
                 <Suspense>
-                  <Theater vimeo_id={vimeoID} />
+                  <Theater vimeo_id={vimeoID} youtube_id={youtubeID} />
                 </Suspense>
                 <div className={"lineBottom"}></div>
               </div>
