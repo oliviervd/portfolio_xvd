@@ -43,6 +43,13 @@ h1:hover {
   color: pink;
 }
 
+@media (max-width: 1600px) {
+  h1,
+  #about--description {
+    font-size: 1.5rem;
+  }
+}
+
 h2 {
   font-family: "Orbikular-Light", sans-serif;
   font-size: 1.5rem;

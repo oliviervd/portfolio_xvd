@@ -17,6 +17,12 @@ const Theater = (props) => {
     }
   }, []);
 
+  useEffect(() => {
+    if (theaterRef.current) {
+      const parentHeight = theaterRef.current.clientHeight;
+      setHeight(parentHeight);
+    }
+  }, []);
   return (
     <div id="theater" className="theater">
       <ReactPlayer

@@ -11,6 +11,10 @@
   position: relative;
 }
 
+.project__title-container {
+  display: flex;
+}
+
 .project__title {
   font-size: 3em;
   font-weight: 900;

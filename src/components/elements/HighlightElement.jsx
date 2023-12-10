@@ -39,18 +39,22 @@ const HighlightElement = (props) => {
           <div className={"gridH-1-19"}>
             <div>
               <div className={"grid-9-1"}>
-                <div className={"grid-3-4-3"}>
+                <div className={"project__title-container"}>
                   <div>
-                    <p className={""}>{type}</p>
-                  </div>
-                  <h1
-                    className={"upper project__title"}
-                    style={{ color: "pink" }}
-                  >
-                    {title}
-                  </h1>
-                  <div>
-                    <p>{year}</p>
+                    <div>
+                      <div>
+                        <p className={""}>{type}</p>
+                      </div>
+                      <div>
+                        <p>{year}</p>
+                      </div>
+                    </div>
+                    <h1
+                      className={"upper project__title"}
+                      style={{ color: "pink" }}
+                    >
+                      {title}
+                    </h1>
                   </div>
                 </div>
                 <div className={"grid_even--3"}>
