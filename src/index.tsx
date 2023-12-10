@@ -6,6 +6,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import "./assets/css/App.css";
 import "./assets/css/grid.css";
+import "./assets/css/project.css";
 import Home from "./components/pages/home";
 
 const queryClient = new QueryClient({

@@ -5,8 +5,6 @@ import React, {
   useLayoutEffect,
   useState,
 } from "react";
-import { makeBold } from "../utils/utils";
-import { serialize } from "../utils/serialize";
 
 const Theater = lazy(() => import("./theater"));
 const PortfolioList = lazy(() => import("./PortfolioList"));
@@ -37,7 +35,7 @@ const HighlightElement = (props) => {
   return (
     <div>
       {props.windowIsOpen && (
-        <div>
+        <div className="project__container">
           <div className={"gridH-1-19"}>
             <div>
               <div className={"grid-9-1"}>
@@ -45,9 +43,12 @@ const HighlightElement = (props) => {
                   <div>
                     <p className={""}>{type}</p>
                   </div>
-                  <h2 className={"upper"} style={{ color: "pink" }}>
+                  <h1
+                    className={"upper project__title"}
+                    style={{ color: "pink" }}
+                  >
                     {title}
-                  </h2>
+                  </h1>
                   <div>
                     <p>{year}</p>
                   </div>
@@ -60,22 +61,22 @@ const HighlightElement = (props) => {
                 </div>
               </div>
               <div>
-                <div id={"about--description"}></div>
+                <Suspense>
+                  <Theater vimeo_id={vimeoID} />
+                </Suspense>
+                <div className={"lineBottom"}></div>
               </div>
             </div>
-            <div style={{ margin: "20px" }}>
-              <Suspense>
-                <Theater vimeo_id={vimeoID} />
-              </Suspense>
-              <div className={"lineBottom"}></div>
+            <div className="project__split-view">
+              <div id={"about--description"}></div>
+              <section className={"image-gallery__container"}>
+                {images.map((image) => (
+                  <div className="image-gallery__image">
+                    <img loading="lazy" src={image.image.url} />
+                  </div>
+                ))}
+              </section>
             </div>
-            <section className={"image-gallery__container"}>
-              {images.map((image) => (
-                <div className="image-gallery__image">
-                  <img loading="lazy" src={image.image.url} />
-                </div>
-              ))}
-            </section>
           </div>
         </div>
       )}

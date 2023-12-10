@@ -11,7 +11,7 @@ import { SiImdb } from "react-icons/si";
 
 const Header = (props) => {
   return (
-    <div className={"gridH-4-1 header"}>
+    <header className={"header"}>
       {props.isDesktopOrLaptop && (
         <div className="menu-item" onClick={props.initGrid}>
           <h1 className="upper accent">Xavier Van D'huynslager sbc.</h1>
@@ -74,9 +74,8 @@ const Header = (props) => {
           </a>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
 export default Header;
-

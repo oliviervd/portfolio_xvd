@@ -77,13 +77,13 @@ const PortfolioElement = (props) => {
                 props.setDetailNarrativeWindowOpen(true); // set detail pane open
                 // props.setDetailBrandedWindowOpen(false); //todo: check maybe not used
                 props.setHideBranded(true); // hide branded pane
-                props.setHideNarrative(false); // hide narrative pane
+                props.setHideNarrative(true); // hide narrative pane
                 props.setDetailDB(detailDB); //populate temp db for detail pane
                 showDetails(!details);
               } else if (kind === "branded-content") {
                 props.setDetailNarrativeWindowOpen(true);
                 props.setHideNarrative(true);
-                props.setHideBranded(false);
+                props.setHideBranded(true);
                 props.setDetailDB(detailDB);
                 showDetails(!details);
               }
@@ -94,6 +94,7 @@ const PortfolioElement = (props) => {
 
               return (
                 <div
+                  id="project__container"
                   className={`project_container ${
                     highlight ? "" : "hideProject"
                   }`}

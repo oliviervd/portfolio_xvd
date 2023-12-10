@@ -44,6 +44,11 @@
   grid-template-columns: 9fr 1fr;
 }
 
+.grid-95-5 {
+  display: grid;
+  grid-template-columns: 95vw 5vw;
+}
+
 .grid_v_7-3 {
   display: grid;
   grid-template-rows: 7fr 3fr;

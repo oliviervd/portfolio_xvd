@@ -77,18 +77,16 @@ const Home = () => {
         </div>
       )}
       {isDesktopOrLaptop && (
-        <div className="full_page">
+        <div className="">
           <div
             className={
-              detailNarrativeWindowOpen
-                ? "grid-65-5-30 full_page"
-                : "grid-30-5-30-5-30 full_page"
+              detailNarrativeWindowOpen ? "" : "grid-30-5-30-5-30 full_page"
             }
           >
             {/* first column - highlights + header
                 todo: add map function
                 */}
-            <div className="gridH-25-1-74" style={{ overflow: "hidden" }}>
+            <div className="" style={{ overflow: "hidden" }}>
               <div className={"lineBottom"}>
                 <Suspense>
                   <Header

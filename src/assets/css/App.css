@@ -111,6 +111,7 @@ a:hover {
 .text-rotate {
   position: relative;
   transform: rotate(90deg);
+  padding-left: 20px;
   /* Legacy vendor prefixes that you probably don't need... */
   /* Safari */
   -webkit-transform: rotate(90deg);
@@ -161,7 +162,7 @@ a:hover {
 
 @media only screen and (min-width: 1224px) {
   .header {
-    height: 25vh;
+    padding-bottom: 20px;
   }
 }
 
@@ -244,14 +245,6 @@ a:hover {
 
 /* media players */
 
-.theater {
-  gap: 20px;
-}
-
-.video {
-  padding: 2px;
-}
-
 .scroller {
   overflow-y: scroll;
 }
@@ -300,22 +293,6 @@ a:hover {
 .grid-1-15-4 {
   display: grid;
   grid-template-columns: 1fr 15fr 4fr;
-}
-.image-gallery__container {
-  display: flex;
-  flex-flow: wrap;
-  width: 100%;
-  height: auto;
-  justify-content: center;
-}
-
-.image-gallery__image {
-  width: 30%;
-  margin: 10px;
-}
-
-.image-gallery__container img {
-  width: 100%;
 }
 
 .portfolio-item {
@@ -409,10 +386,4 @@ a:hover {
   .grid-1-15-4 p {
     display: none;
   }
-}
-
-#about--description {
-  font-size: 20px;
-  margin: 20px;
-  padding-bottom: 20px;
 }
