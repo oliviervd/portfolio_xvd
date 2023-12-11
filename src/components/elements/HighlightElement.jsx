@@ -10,6 +10,9 @@ const Theater = lazy(() => import("./theater"));
 const PortfolioList = lazy(() => import("./PortfolioList"));
 
 const HighlightElement = (props) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isTheaterOpen, setIsTheaterOpen] = useState(true);
+  const [currentImage, setCurrentImage] = useState(null);
   let vimeoID, youtubeID, title, year, type, techSpecs, images, _description;
 
   if (props.windowIsOpen) {
@@ -62,7 +65,7 @@ const HighlightElement = (props) => {
                   ⤫close
                 </p>
               </div>
-              <div>
+              <div style={{ display: isModalOpen ? "none" : "block" }}>
                 <Suspense>
                   <Theater vimeo_id={vimeoID} youtube_id={youtubeID} />
                 </Suspense>
@@ -70,13 +73,44 @@ const HighlightElement = (props) => {
             </div>
             <div className="project__split-view">
               <div id={"about--description"}></div>
-              <section className={"image-gallery__container"}>
+
+              <ul id="image-gallery" className={"image-gallery__container"}>
                 {images.map((image) => (
-                  <div className="image-gallery__image">
+                  <li
+                    className="image-gallery__image"
+                    onClick={() => {
+                      setIsModalOpen(true);
+                      setCurrentImage(image.image.url);
+                      setIsTheaterOpen(false);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                  >
                     <img loading="lazy" src={image.image.url} />
-                  </div>
+                  </li>
                 ))}
-              </section>
+              </ul>
+            </div>
+            <div
+              id="image-gallery__modal"
+              className="image-gallery__modal"
+              style={{ display: isModalOpen ? "block" : "none" }}
+            >
+              <div className="image-gallery__modal-box">
+                <img id="img01" src={currentImage} />
+              </div>
+              <div
+                id="close"
+                className="image-gallery__modal-close"
+                onClick={() => {
+                  setIsModalOpen(false);
+                  setIsTheaterOpen(true);
+                  document
+                    .getElementById("image-gallery")
+                    .scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                X
+              </div>
             </div>
           </div>
         </div>

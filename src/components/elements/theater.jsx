@@ -32,7 +32,7 @@ const Theater = (props) => {
         url={uri}
         loop={true}
         playing={true}
-        mute={true}
+        mute={"1"}
         controls={true}
         volume={"1"}
         className="react-player"

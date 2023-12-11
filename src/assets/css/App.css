@@ -279,3 +279,7 @@ body {
     display: none;
   }
 }
+
+.overflow-hidden {
+  overflow: hidden;
+}
