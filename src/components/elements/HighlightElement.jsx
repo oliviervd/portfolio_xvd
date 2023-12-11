@@ -12,11 +12,12 @@ const PortfolioList = lazy(() => import("./PortfolioList"));
 const HighlightElement = (props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isTheaterOpen, setIsTheaterOpen] = useState(true);
+
   const [currentImage, setCurrentImage] = useState(null);
   let vimeoID, youtubeID, title, year, type, techSpecs, images, _description;
 
   if (props.windowIsOpen) {
-    if (props.detailDB[0].vimeo[0]["vimeoURI"]) {
+    if (props.detailDB[0].vimeo[0]) {
       vimeoID = props.detailDB[0].vimeo[0]["vimeoURI"];
     }
     title = props.detailDB[0].title;
