@@ -65,7 +65,7 @@ const HighlightElement = (props) => {
                   ⤫close
                 </p>
               </div>
-              <div style={{ display: isModalOpen ? "none" : "block" }}>
+              <div style={{ opacity: isModalOpen ? "0" : "100" }}>
                 <Suspense>
                   <Theater vimeo_id={vimeoID} youtube_id={youtubeID} />
                 </Suspense>
